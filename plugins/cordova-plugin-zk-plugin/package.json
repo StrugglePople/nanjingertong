@@ -1,0 +1,62 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "D:\\work\\ionic\\Hospital_i3\\ZkPlugin",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "D:\\work\\ionic\\Hospital_i3\\ZkPlugin",
+        "spec": "D:\\work\\ionic\\Hospital_i3\\ZkPlugin",
+        "type": "directory"
+      },
+      "D:\\work\\ionic\\Hospital_i3\\node_modules"
+    ]
+  ],
+  "_from": "ZkPlugin",
+  "_id": "ZkPlugin@1.0.0",
+  "_inCache": true,
+  "_location": "/ZkPlugin",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "D:\\work\\ionic\\Hospital_i3\\ZkPlugin",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "D:\\work\\ionic\\Hospital_i3\\ZkPlugin",
+    "spec": "D:\\work\\ionic\\Hospital_i3\\ZkPlugin",
+    "type": "directory"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "file:ZkPlugin",
+  "_shasum": "8d3cc0a86c5161f3fb76784b69b9b632039d1aa2",
+  "_shrinkwrap": null,
+  "_spec": "D:\\work\\ionic\\Hospital_i3\\ZkPlugin",
+  "_where": "D:\\work\\ionic\\Hospital_i3\\node_modules",
+  "author": {
+    "name": "cfl"
+  },
+  "cordova": {
+    "id": "cordova-plugin-zk-plugin",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "dependencies": {},
+  "description": "custome plugin",
+  "devDependencies": {},
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "license": "xxxx",
+  "name": "ZkPlugin",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "version": "1.0.0"
+}

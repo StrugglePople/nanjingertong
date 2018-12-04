@@ -1,0 +1,48 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.ewell.guahao.nanjingchildren"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.ewell.guahao.nanjingchildren"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.ewell.guahao.nanjingchildren"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ewell.guahao.nanjingchildren"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.ewell.guahao.nanjingchildren"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ewell.guahao.nanjingchildren"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.ewell.guahao.nanjingchildren"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ewell.guahao.nanjingchildren"
+        },
+        "cordova-plugin-zk-plugin": {
+            "PACKAGE_NAME": "com.ewell.guahao.nanjingchildren"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.ewell.guahao.nanjingchildren"
+        },
+        "mx.ferreyra.callnumber": {
+            "PACKAGE_NAME": "com.ewell.guahao.nanjingchildren"
+        },
+        "org.apache.cordova.inappbrowser": {
+            "PACKAGE_NAME": "com.ewell.guahao.nanjingchildren"
+        }
+    },
+    "dependent_plugins": {}
+}
