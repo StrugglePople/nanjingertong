@@ -1,0 +1,10 @@
+<!-- Generated template for the MemberSelectComponent component -->
+<ion-title *ngIf="type == 'title'">
+  <button ion-button clear color="light" (click)="openModal()">
+    {{text}}&nbsp;&nbsp;
+    <ion-icon name="ios-arrow-down"></ion-icon>
+  </button>
+</ion-title>
+<ion-item *ngIf="type == 'normal'" detail-push tappable title-color-1 (click)="openModal()">
+  {{text}} &nbsp;&nbsp;<span *ngIf="member.id">{{member.sex == 'FEMALE'?'女':'男'}}&nbsp; | &nbsp;{{member.mobileNo}}</span>
+</ion-item>

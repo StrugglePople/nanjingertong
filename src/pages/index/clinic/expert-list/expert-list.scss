@@ -1,0 +1,90 @@
+page-expert-list {
+  .item-inner {
+    padding-right: 0;
+  }
+  .item-inner .input-wrapper .label {
+    margin: 0 !important;
+  }
+}
+.expert-item {
+  position: relative;
+}
+.expert-item .item-top {
+  height: pxTorem(90px);
+  position: relative;
+  padding: pxTorem(10px) 0;
+}
+
+.expert-item .item-top .image {
+  position: absolute;
+  left: pxTorem(15px);
+  top: 50%;
+  margin-top: pxTorem(-25px);
+  width: pxTorem(50px);
+  height: pxTorem(50px);
+  border-radius: pxTorem(50px);
+  overflow: hidden;
+  background: url("../assets/image/common/expert.png") no-repeat;
+  background-size: pxTorem(50px);
+}
+.expert-item .item-top .title{
+  position: absolute;
+  top: pxTorem(12px);
+  height: pxTorem(16px);
+  left: pxTorem(80px);
+}
+
+.expert-item .item-top .detail-title{
+  position: absolute;
+  bottom: pxTorem(16px);
+  //height: pxTorem(14px);
+  left: pxTorem(80px);
+  right: pxTorem(10px);
+}
+.expert-item .item-top .expert-flag, .expert-item .item-top .dept-flag {
+  position: absolute;
+  height: pxTorem(15px);
+  left: pxTorem(80px);
+  //width: pxTorem(60px);
+  padding: 0 8px;
+  top: 50%;
+  margin-top: pxTorem(-8px);
+  border-radius: pxTorem(15px);
+  line-height: pxTorem(15px);
+}
+.expert-item .item-top .expert-flag {
+  border: 1px solid #ffc714;
+  color: #ffc714;
+}
+
+.expert-item .item-top .dept-flag {
+  border: 1px solid #00e7c2;
+  color: #00e7c2;
+}
+
+.expert-item .item-top .expert-title {
+  position: absolute;
+  height: pxTorem(15px);
+  left: pxTorem(80px);
+  width: pxTorem(65px);
+  top: 50%;
+  margin-top: pxTorem(-8px);
+  line-height: pxTorem(15px);
+}
+
+.expert-item .item-top .clinic-button {
+  position: absolute;
+  top: pxTorem(16px);
+  right: pxTorem(15px);
+  width: pxTorem(50px);
+  height: pxTorem(20px);
+  border-radius: pxTorem(20px);
+  background-color: #e4e4e5;
+  color: #fff;
+}
+.expert-item .item-top .clinic-button.active {
+  background-color: #73d2ff;
+}
+.expert-item .item-bottom{
+  padding: 0 pxTorem(15px) pxTorem(12px) pxTorem(15px);
+}

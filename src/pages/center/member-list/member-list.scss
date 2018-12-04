@@ -1,0 +1,111 @@
+page-member-list {
+  /**持卡人，卡页面上添加的样式***/
+  .list-ios .item-block .item-inner{
+    border-bottom: none;
+  }
+
+  .button-2 {
+    height: pxTorem(44px);
+    position: relative;
+    background-color: #fff;
+  }
+  .button-2.activated{
+    background-color: #ccc;
+  }
+  .button-2 .icon {
+    width: pxTorem(20px);
+    height: pxTorem(20px);
+    position: absolute;
+    left: pxTorem(15px);
+    top: 50%;
+    margin-top: pxTorem(-10px);
+  }
+
+  .button-2 .title {
+    position: absolute;
+    left: pxTorem(46px);
+    top: 0;
+    color: $primary-color;
+    line-height: pxTorem(44px);
+  }
+
+  .button-2 .detail-title {
+    position: absolute;
+    right: pxTorem(39px);
+    top: 0;
+    line-height: pxTorem(44px);
+    font-size: pxTorem(15px);
+  }
+  .member-sex .col {
+    height: pxTorem(30px);
+  }
+  .add-btn-icon {
+    background: url("../assets/image/center/center-add-btn.png");
+    background-size: pxTorem(20px) pxTorem(20px);
+  }
+  /*.member-item {
+    height: pxTorem(72px);
+    position: relative;
+  }
+  .member-item .icon {
+    width: pxTorem(20px);
+    height: pxTorem(20px);
+    position: absolute;
+    left: pxTorem(15px);
+    top: 50%;
+    margin-top: pxTorem(-10px);
+    background-size: pxTorem(20px) !important;
+  }
+  .member-item .icon.man {
+    background: url("../assets/image/center/center-man-icon.png") no-repeat;
+  }
+  .member-item .icon.woman {
+    background: url("../assets/image/center/center-woman-icon.png") no-repeat;
+  }
+  .member-item .name {
+    position: absolute;
+    top: pxTorem(15px);
+    left: pxTorem(45px);
+    font-size: pxTorem(16px);
+    height: pxTorem(16px);
+  }
+  .member-item .mobile {
+    position: absolute;
+    bottom: pxTorem(15px);
+    left: pxTorem(45px);
+    font-size: pxTorem(16px);
+    height: pxTorem(16px);
+  }
+  .member-item .detail-title {
+    position: absolute;
+    right: pxTorem(39px);
+    top: 0;
+    font-size: pxTorem(15px);
+    line-height: pxTorem(72px);
+  }
+  .member-item .moren{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: pxTorem(33px);
+    height: pxTorem(33px);
+    background: url("../assets/image/center/center-moren.png") no-repeat;
+    background-size: pxTorem(33px);
+  }
+  .member-list .item {
+    padding: pxTorem(5px) pxTorem(15px);
+  }*/
+}
+.member-item {
+  .mobile{
+    padding-left: 15px;
+    background: url("../assets/image/center/member-phone.png") no-repeat 0 3px;
+    background-size: 12px 11px;
+  }
+  .detail-title{
+    padding-left: 15px;
+    background: url("../assets/image/center/mumber-paper.png") no-repeat 0 4px;
+    background-size: 12px 11px;
+  }
+
+}

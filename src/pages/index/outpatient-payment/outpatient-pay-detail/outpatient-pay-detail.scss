@@ -1,0 +1,47 @@
+page-outpatient-pay-detail {
+  .pay-body{
+    margin: 10px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.10);
+    border-radius: 10px;
+    width: auto;
+    overflow: hidden;
+    .item-block{
+      height: 30px;
+    }
+    .item-block .item-inner{
+      border:none;
+    }
+    .last-item ion-row{
+      padding-left: 0;
+    }
+    .last-item.item-block .item-inner{
+      border-top: 1px dashed #D2D2D2;
+    }
+    ion-row{
+      padding: 0 15px;
+    }
+  }
+  .pay-list-detail{
+    font-size: 14px;
+    color: #888888;
+  }
+  .pay-bot{
+    height: 50px;
+    line-height: 40px;
+    background: #FFFFFF;
+    font-size: 18px;
+    box-shadow: inset 0 0 0 0 #D2D2D2;
+    .pay-price{
+      font-size: 16px;
+      color: #666666;
+      span{
+        font-size: 18px;
+      }
+    }
+    .go-pay{
+      color: #FFFFFF;
+      background: #EC6386;
+    }
+  }
+}

@@ -1,0 +1,172 @@
+<!--
+  Generated template for the Index page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title class="hospital-logo">{{hospitalName}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="main-top-info" *ngIf="rolling.newsId">
+    <div class="marquee-init">
+        <span class="ui-btn marquee-info" tappable (click)="pushView('HealthInformationDetailPage', {newsId:rolling.newsId,title:'通知'})">
+          {{rolling.title}}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点击查看&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+    </div>
+  </div>
+
+  <ion-slides pager *ngIf="banners && banners.length > 0" autoplay="3000" loop>
+    <ion-slide *ngFor="let banner of banners">
+      <img [src]="banner.imageUrl">
+    </ion-slide>
+  </ion-slides>
+
+  <!--<ion-row class="net-outpatient">
+    <ion-col class="left" tappable (click)="noOpen()">
+      <div>网络门诊</div>
+      <p>足不出户，面对面沟通</p>
+    </ion-col>
+    <ion-col class="right" tappable (click)="noOpen()">
+      <div>在线咨询</div>
+      <p>一对一详细解答</p>
+    </ion-col>
+  </ion-row>-->
+  <div class="first-box">
+    <ion-row class="appoint-mode">
+      <!--<ion-col col-4 class="second second-1" tappable (click)="showDeptList(null,'SCHEDULE_REALTIME','0')">-->
+      <ion-col col-4 class="second second-1" tappable (click)="showClinicNoteView('REAL_GUAHAO')">
+
+        <div class="rel-time">今日挂号</div>
+      </ion-col>
+      <!--<ion-col col-4 class="second second-2" tappable (click)="showDeptList(null,'SCHEDULE_RESERVATION','1')">-->
+      <ion-col col-4 class="second second-2" tappable (click)="showClinicNoteView('GUAHAO')">
+
+        <div class="rel-time">预约挂号</div>
+      </ion-col>
+      <ion-col col-4 class="second second-right second-3" tappable (click)="pushView('SelfPayPage',{'needLogin': true})">
+
+        <div class="rel-time">门诊缴费</div>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <ion-row class="hospital-guide">
+    <ion-col tappable (click)="pushView('CheckInspectRecord',{type:'CHECK-INSPECT'})">
+      <div class="parent">
+        <div class="left common">
+          <div class="name" text-middle>报告查询</div>
+        </div>
+      </div>
+
+      <div class="right-line"></div>
+    </ion-col>
+    <ion-col tappable (click)="pushView('MemberListPage', {'needLogin': true})">
+      <div class="parent">
+        <div class="right common">
+          <div class="name" text-middle>持卡人管理</div>
+        </div>
+      </div>
+
+    </ion-col>
+  </ion-row>
+  <div style="height: 5px;background-color: #EEEEEE"></div>
+  <ion-row class="parallel-list">
+    <ion-col tappable (click)="pushView('AppointmentRecordPage', {'needLogin': true,regType:0})">
+      <img class="icon" [src]="threeModule[0]"/>
+      预约记录
+    </ion-col>
+    <ion-col tappable (click)="pushView('AppointmentRecordPage', {'needLogin': true,regType:1})">
+      <img class="icon" [src]="threeModule[1]"/>
+      挂号记录
+    </ion-col>
+    <ion-col tappable (click)="pushView('FeeRecordPage', {'needLogin': true})">
+      <img class="icon" [src]="threeModule[2]"/>
+      费用记录
+    </ion-col>
+    <ion-col tappable (click)="pushView('ChufangRecord',{'needLogin': true})">
+      <img class="icon" [src]="threeModule[3]"/>
+      处方记录
+    </ion-col>
+  </ion-row>
+  <ion-row class="parallel-list">
+    <ion-col tappable (click)="noOpen()">
+      <img class="icon" [src]="threeModule[4]"/>
+      排队叫号
+    </ion-col>
+    <ion-col tappable (click)="pushView('CheckInspectRecord', {type:'YUANNEI-DAOHANG'})">
+      <img class="icon" [src]="threeModule[5]"/>
+      院内导航
+    </ion-col>
+    <ion-col tappable (click)="pushView('CheckInspectRecord', {type:'YUANWAI-DAOHANG'})">
+      <img class="icon" [src]="threeModule[6]"/>
+      来院导航
+    </ion-col>
+    <ion-col tappable (click)="showStopCar()">
+      <img class="icon" [src]="threeModule[7]"/>
+      停车缴费
+    </ion-col>
+    <!--showStopCar-->
+  </ion-row>
+  <div style="height: 5px;background-color: #EEEEEE"></div>
+  <div class="introduce" style="margin-top: 10px;">
+    <div class="title title-4">
+      健康资讯
+      <div class="more" tappable (click)="pushView('HealthInformationPage',{type: 'HEALTH', title: '健康资讯'})">更多 &nbsp;<ion-icon name="arrow-forward"></ion-icon></div>
+    </div>
+    <ion-list class="health-info">
+      <ion-item tappable detail-push  *ngFor="let news of newsList" (click)="pushView('HealthInformationDetailPage', {newsId:news['newsId'],title:'健康资讯'})">
+        <ion-row>
+          <ion-col col-8 text-left>{{news.title}}</ion-col>
+          <ion-col col-4 text-right size-small-3 title-color-2>{{news.publishTime | date:"yyyy-MM-dd"}}</ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+  </div>
+  <!--<ion-grid>
+    <ion-row>
+      <ion-col class="fun-col" bg-color-light tappable (click)="pushView('VisitRecordPage', {'needLogin': true})">
+        <i class="icon index-1"></i>
+        <div class="title" text-center title-color-1>就诊记录</div>
+      </ion-col>
+      <ion-col class="fun-col" bg-color-light tappable (click)="pushView('InspectRecordPage', {'needLogin': true})">
+        <i class="icon index-8"></i>
+        <div class="title" text-center title-color-1>检验记录</div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="fun-col" bg-color-light tappable (click)="pushView('HtmlInfoPage', {type: 'YUYUE'})">
+        <i class="icon index-1"></i>
+        <div class="title" text-center title-color-1>预约挂号</div>
+      </ion-col>
+      <ion-col class="fun-col" bg-color-light tappable (click)="pushView('AppointmentRecordPage', {'needLogin': true})">
+        <i class="icon index-8"></i>
+        <div class="title" text-center title-color-1>预约记录</div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="fun-col" bg-color-light tappable (click)="pushView('HealthInformationPage',{type: 'INSTRUCTIONS', title: '就医指南'})">
+        <i class="icon index-2"></i>
+        <div class="title" text-center title-color-1>就医指南</div>
+      </ion-col>
+      <ion-col class="fun-col" bg-color-light tappable (click)="pushView('HospitalFlashPage')">
+        <i class="icon index-3"></i>
+        <div class="title" text-center title-color-1>信息公告</div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="fun-col" bg-color-light tappable (click)="pushView('DiagnoseIndexPage')">
+        <i class="icon index-4"></i>
+        <div class="title" text-center title-color-1>医疗大数据</div>
+      </ion-col>
+      <ion-col class="fun-col" bg-color-light tappable (click)="showDeptList('expert')">
+        <i class="icon index-5"></i>
+        <div class="title" text-center title-color-1>医生介绍</div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>-->
+
+</ion-content>

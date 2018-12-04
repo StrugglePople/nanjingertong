@@ -1,0 +1,76 @@
+<!--
+  Generated template for the Record page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>导医服务</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+
+  <!--<ion-list class="my-service">
+    <ion-item class="item-icon-left fun-item" detail-push tappable title-color-1 (click)="showDeptList('dept')">
+      <div class="left-icon my-service-5"></div>搜索科室
+    </ion-item>
+    <ion-item class="item-icon-left fun-item" detail-push tappable title-color-1 (click)="showDeptList('expert')">
+      <div class="left-icon my-service-6"></div>搜索医生
+    </ion-item>
+
+  </ion-list>
+  <module-separate></module-separate>
+  <ion-list class="my-service">
+    <ion-item class="item-icon-left fun-item" detail-push tappable title-color-1 (click)="searhVisit()">
+      <div class="left-icon my-service-1"></div>门诊出诊
+    </ion-item>
+    <ion-item class="item-icon-left fun-item" detail-push tappable title-color-1 (click)="pushView('HealthInformationPage',{type: 'POLICY', title: '医保政策'})">
+      <div class="left-icon my-service-2"></div>医保政策
+    </ion-item>
+    <ion-item class="item-icon-left fun-item" detail-push tappable title-color-1 (click)="showPriceInfoView()">
+      <div class="left-icon my-service-3"></div>物价公示
+    </ion-item>
+    <ion-item class="item-icon-left fun-item" detail-push tappable title-color-1 (click)="getTel()">
+      <div class="left-icon my-service-4"></div>联系医院
+    </ion-item>
+
+
+  </ion-list>-->
+  <div class="nine-lattice">
+    <ion-row>
+      <ion-col class="fun-col" tappable (click)="showDeptList('dept')">
+        <img [src]="imgSrcs[0]" />
+        <div class="title-name">搜索科室</div>
+      </ion-col>
+      <ion-col class="fun-col" tappable (click)="showDeptList('expert')">
+        <img [src]="imgSrcs[1]" />
+        <div class="title-name">搜索医生</div>
+      </ion-col>
+      <!--<ion-col class="fun-col" tappable (click)="searhVisit()">
+        <img [src]="imgSrcs[2]" />
+        <div class="title-name">门诊出诊</div>
+      </ion-col>-->
+      <ion-col class="fun-col" tappable (click)="pushView('HealthInformationPage',{type: 'POLICY', title: '医保政策'})">
+        <img [src]="imgSrcs[3]" />
+        <div class="title-name">医保政策</div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="fun-col" tappable (click)="showPriceInfoView()">
+        <img [src]="imgSrcs[4]" />
+        <div class="title-name">物价公示</div>
+      </ion-col>
+      <ion-col class="fun-col" tappable (click)="getTel()">
+        <img [src]="imgSrcs[5]" />
+        <div class="title-name">联系医院</div>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </div>
+
+
+
+</ion-content>

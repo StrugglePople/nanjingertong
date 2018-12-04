@@ -1,0 +1,395 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+html{
+  font-size: 10px !important;
+  text-size-adjust:none !important;
+}
+ion-app.ios {
+  font-family: Arial,微软雅黑,黑体 !important;
+}
+p {
+  padding: 0;
+  margin: 0;
+}
+.clearfix:after{
+  content: '\200B';
+  display: block;
+  height:0;
+  clear: both;
+}
+.border-none .item-inner{
+  border-bottom: none !important;
+}
+/*.tabs-ios .tab-button{
+  margin-top: -15px;
+}*/
+/*************************title样式*********************************/
+.header .title .toolbar-title-ios{
+  font-size: 20px;
+  color: #111111;
+  font-weight: normal;
+}
+.header .toolbar .toolbar-background{
+  background-color: #ffffff;
+  border-bottom: 1px solid #EDEDED;
+}
+.header .toolbar .bar-button-default-ios{
+  color: #EC6386;
+}
+/*************************字体颜色*********************************/
+[title-color-light] {
+  color: #fff
+}
+[title-color-black] {
+  color: #000000;
+}
+[title-color-red] {
+  color: #FF513C;
+}
+[title-color-1], .title-color-1 {
+  color: #4d4d4d;
+}
+[title-color-2] {
+  color: #b1b1b1;
+}
+[title-color-3] , .title-color-3 {
+  color: $primary-color;
+}
+[title-color-4] {
+  color: #7f7f7f;
+}
+[title-color-5] {
+  color: #FF513C;
+}
+[title-color-6] {
+  color: #EC6386;
+}
+[title-color-7] {
+  color: #cfcfcf;
+}
+[title-color-8] {
+  color: #888888;
+}
+[title-color-9] {
+  color: #111111;
+}
+/*************************背景颜色颜色*********************************/
+[bg-color-light] {
+  background-color: #ffffff;
+}
+[bg-color-main] {
+  background-color: $primary-color;
+}
+[bg-color-1], .bg-color-1 {
+  background-color: #EEEEEE;
+}
+[bg-color-none] {
+  background-color: transparent;
+}
+/*************************字体大小*********************************/
+[font-weight-600]{
+  font-weight: 600;
+}
+[size-big-4]{
+  font-size: 23px;
+}
+[size-big-3] {
+  font-size: pxTorem(30px);
+}
+[size-big-2] {
+  font-size: pxTorem(18px);
+}
+[size-big-1] {
+  font-size: pxTorem(17px);
+}
+[size-middle] {
+  font-size: pxTorem(16px);
+}
+[size-small-1] {
+  font-size: pxTorem(15px);
+}
+[size-small-2] {
+  font-size: pxTorem(14px) !important;
+}
+[size-small-3] {
+  font-size: pxTorem(13px);
+}
+[size-small-4] {
+  font-size: pxTorem(12px);
+}
+/*************************箭头*********************************/
+.icon-arrow {
+  width: 9px;
+  height: pxTorem(16px);
+  position: absolute;
+  right: pxTorem(15px);
+  top: 50%;
+  margin-top: pxTorem(-8px);
+  background: url("../assets/image/common/arrow.png") no-repeat;
+  background-size: pxTorem(9px) pxTorem(16px);
+}
+
+/***********************边框线*******************************/
+[top-bottom-line] {
+  border-top: pxTorem(1px) solid #f1f1f1;
+  border-bottom: pxTorem(1px) solid #f1f1f1;
+}
+[top-line] {
+  border-top: pxTorem(1px) solid #f1f1f1;
+}
+[bottom-line] {
+  border-bottom: pxTorem(1px) solid #f1f1f1;
+}
+[left-line] {
+  border-left: pxTorem(1px) solid #f1f1f1;
+}
+[right-line] {
+  border-right: pxTorem(1px) solid #f1f1f1;
+}
+[round-line] {
+  border: pxTorem(1px) solid #f1f1f1;
+}
+/***********************padding*************************/
+[no-padding] {
+  padding: 0 !important;
+}
+[no-margin] {
+  margin: 0 !important;
+}
+[text-over] {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/******************remind（提醒标题）*****************************/
+.remind-1 {
+  position: relative;
+  padding-left: pxTorem(13px);
+  min-height: pxTorem(30px);
+}
+.remind-1 .title {
+  line-height: pxTorem(40px);
+}
+.remind-1 .flag {
+  background: url("../assets/image/common/title-flag.png") no-repeat;
+  background-size: pxTorem(5px) pxTorem(16px);
+  width: pxTorem(5px);
+  height: pxTorem(16px);
+  position: absolute;
+  top: 50%;
+  margin-top: pxTorem(-8px);
+  left: 0;
+}
+
+.header .toolbar-background{
+  border-bottom: none;
+  background-color: $primary-color;
+  //background:url(../assets/image/nav/nav-bg.png) no-repeat;
+  //background-size:100% 64px;
+}
+.header .toolbar-title-ios, .header .bar-button-default-ios, .header .bar-button-default.bar-button-ios-default, .header .bar-button-clear-ios-default {
+  color:#fff
+}
+
+/***************************radio**********************************/
+.radio-col .radio {
+  width: pxTorem(16px);
+  height: pxTorem(16px);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -8px;
+  border: pxTorem(1px) solid #7f7f7f;
+  border-radius: pxTorem(46px);
+}
+
+.radio-col .radio .icon {
+  width: pxTorem(16px);
+  height: pxTorem(16px);
+  background: url("../assets/image/common/check.png") no-repeat;
+  background-size: pxTorem(9px) pxTorem(6px);
+  background-position: pxTorem(3px) pxTorem(5px);
+}
+
+.radio-col .radio.checked {
+  border: 0;
+  background-color: $primary-color;
+}
+
+.radio-col .title {
+  position: absolute;
+  line-height: pxTorem(30px);
+  top: 0;
+  left: pxTorem(26px);
+}
+/**************************修改框架中的一些样式**********************/
+::-webkit-input-placeholder { /* WebKit browsers */
+  　　color:#999;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+　　color:#999;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+　　color:#999;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+　　color:#999;
+}
+//ios样式
+.item-ios {
+  color: #4d4d4d;
+  font-size: pxTorem(16px);
+}
+.tabs-ios .tabbar {
+  border-top: pxTorem(0.55px) solid #f1f1f1 !important;
+}
+.header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios {
+  border-color: transparent;
+}
+.list-ios {
+  margin: pxTorem(-1px) 0 0 0;
+}
+.list-header-ios {
+  border-bottom: pxTorem(0.55px) solid #e1e1e1 !important;
+}
+.list-ios .item-block .item-inner {
+  border-bottom: pxTorem(0.55px) solid #e1e1e1;
+}
+.list-ios > .item-block:first-child {
+  border-top: pxTorem(0.55px) solid #e1e1e1 !important;
+}
+.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+  border-bottom: pxTorem(0.55px) solid #e1e1e1;
+}
+.list-ios > .item-block:last-child .item-inner, .list-ios > .item-wrapper:last-child .item-block .item-inner {
+  border-bottom: 0;
+}
+.toggle-ios.toggle-disabled, .item-ios.item-toggle-disabled ion-label {
+  opacity: 1;
+}
+.col.activated, div.activated{
+  background-color: #ccc;
+}
+$toggle-ios-background-color-on: color($colors, primary);
+/*********************************************************************/
+[zk-button-full] {
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+}
+[button-theme]{
+  color: #fff;
+  background-image: linear-gradient(90deg, #878FFF 0%, #6053E2 100%);
+}
+[button-theme].activated{
+  filter:alpha(opacity=70);
+  opacity:0.7;
+}
+[nanjing-button]{
+  background-image: linear-gradient(90deg, #878FFF 0%, #6053E2 100%) !important;
+}
+
+.fun-item .left-icon {
+  width: pxTorem(20px);
+  height: pxTorem(20px);
+  position: absolute;
+  left: pxTorem(15px);
+  top: 50%;
+  margin-top: pxTorem(-10px);
+  background-size: pxTorem(20px) pxTorem(20px);
+}
+.item-icon-left {
+  padding-left: 54px;
+}
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.alert-ios .alert-message {
+  text-align: center;
+  overflow: hidden !important;
+  overflow-y: visible !important;
+}
+.alert-ios.text-left .alert-message {
+  text-align: left;
+}
+.alert-ios.loadNote .alert-message {
+  height: 240px;
+}
+.grid .row, .row {
+  display: -webkit-box;
+  display: -webkit-flex !important;
+  display: -ms-flexbox;
+  display: flex;
+}
+.select-person-page{
+  background: url("../assets/image/index/call-number.png") no-repeat;
+  background-size: 100% 100%;
+  color: #ffffff;
+}
+.select-person-page .item-inner{
+  border-bottom: none !important;
+}
+.item-ios.boder-none .item-inner{
+  border: none !important;
+}
+.record-list{
+  margin-bottom: 10px;
+}
+.toast-ios.exist-app .toast-wrapper{
+  width: 200px;
+  text-align: center;
+  background-color: rgba(0,0,0,0.5);
+}
+
+//公共样式
+[text-middle]{
+  display: table-cell;
+  vertical-align:middle;
+}
+/*********************iphoneX 适配 start************************/
+.ios .platform-iphonex ion-menu>.menu-inner>.toolbar.statusbar-padding:first-child,
+.ios .platform-iphonex ion-menu>.menu-inner>ion-header>.toolbar.statusbar-padding:first-child,
+.ios .platform-iphonex ion-nav>.ion-page>.toolbar.statusbar-padding:first-child,
+.ios .platform-iphonex ion-nav>.ion-page>ion-header>.toolbar.statusbar-padding:first-child,
+.ios .platform-iphonex ion-tab>.ion-page>ion-header>.toolbar.statusbar-padding:first-child,
+.ios .platform-iphonex ion-tabs>.ion-page.tab-subpage>ion-header>.toolbar.statusbar-padding:first-child{
+  padding-top: calc(40px + 4px);
+  min-height: calc(64px + 20px);
+}
+.ios .platform-iphonex ion-menu>.menu-inner>.toolbar.statusbar-padding:first-child ion-segment,
+.ios .platform-iphonex ion-menu>.menu-inner>.toolbar.statusbar-padding:first-child ion-title,
+.ios .platform-iphonex ion-menu>.menu-inner>ion-header>.toolbar.statusbar-padding:first-child ion-segment,
+.ios .platform-iphonex ion-menu>.menu-inner>ion-header>.toolbar.statusbar-padding:first-child ion-title,
+.ios .platform-iphonex ion-nav>.ion-page>.toolbar.statusbar-padding:first-child ion-segment,
+.ios .platform-iphonex ion-nav>.ion-page>.toolbar.statusbar-padding:first-child ion-title,
+.ios .platform-iphonex ion-nav>.ion-page>ion-header>.toolbar.statusbar-padding:first-child ion-segment,
+.ios .platform-iphonex ion-nav>.ion-page>ion-header>.toolbar.statusbar-padding:first-child ion-title,
+.ios .platform-iphonex ion-tab>.ion-page>ion-header>.toolbar.statusbar-padding:first-child ion-segment,
+.ios .platform-iphonex ion-tab>.ion-page>ion-header>.toolbar.statusbar-padding:first-child ion-title,
+.ios .platform-iphonex ion-tabs>.ion-page.tab-subpage>ion-header>.toolbar.statusbar-padding:first-child ion-segment,
+.ios .platform-iphonex ion-tabs>.ion-page.tab-subpage>ion-header>.toolbar.statusbar-padding:first-child ion-title{
+  padding-top: 40px;
+  height: calc(64px + 20px);
+  min-height: calc(64px + 20px);
+}
+ion-nav.platform-iphonex{
+  height: auto;
+  bottom: 34px;
+}
+/*********************iphoneX 适配 end************************/

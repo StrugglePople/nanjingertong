@@ -1,0 +1,86 @@
+<!--
+  Generated template for the RegRecordDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>充值记录详情</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content bg-color-1>
+  <module-separate></module-separate>
+  <ion-list>
+    <ion-item>
+      <ion-grid no-padding>
+        <ion-row>
+          <ion-col title-color-4>卡号</ion-col>
+          <ion-col text-right>{{data.medicalCardNo}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <ion-item>
+      <ion-grid no-padding>
+        <ion-row>
+          <ion-col title-color-4>预交金单号</ion-col>
+          <ion-col text-right>{{data.businessNo}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <ion-item>
+      <ion-grid no-padding>
+        <ion-row>
+          <ion-col title-color-4>持卡人</ion-col>
+          <ion-col text-right>{{card.name}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <ion-item>
+      <ion-grid no-padding>
+        <ion-row>
+          <ion-col title-color-4>充值金额</ion-col>
+          <ion-col text-right>{{data.fee}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <ion-item>
+      <ion-grid no-padding>
+        <ion-row>
+          <ion-col title-color-4>充值时间</ion-col>
+          <ion-col text-right>{{data.chargeTime}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <ion-item>
+      <ion-grid no-padding>
+        <ion-row>
+          <ion-col title-color-4>当前状态</ion-col>
+          <ion-col text-right>{{rechargeStatus[data.status]}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+  <module-separate></module-separate>
+
+  <!--<div style="text-align: center">-->
+    <!--<canvas id="canvas"></canvas>-->
+  <!--</div>-->
+  <!--<button ion-button full round zk-button-full button-theme (click)="showMap()" *ngIf="!data.status">
+    <i class="nav"></i>
+  </button>-->
+
+  <!--<ion-grid *ngIf="data.status">
+    <ion-row>
+      <ion-col *ngIf="data.status === 'INIT'">
+        <button ion-button full round zk-button-full button-theme (click)="confirm()">
+          去支付
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>-->
+</ion-content>

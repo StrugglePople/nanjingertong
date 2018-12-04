@@ -1,0 +1,71 @@
+<!--
+  Generated template for the AddCard page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>门诊出诊</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content bg-color-1>
+  <ion-item-divider color="light">
+    <div class="record-divider">{{visitDept.name}}</div>
+  </ion-item-divider>
+  <table class="table"  border="1"  cellspacing="0"  style=" border-collapse:collapse; border: 1px solid #cdcdcd ; align : center " *ngFor="let item of visitList">
+    <tr >
+      <td  style="width: 47px; height: 80px ; text-align: center" rowspan = "2">{{item.week}}</td>
+      <td  style="width: 47px" >上午</td>
+
+
+      <td  colspan="2">
+
+        <div class="ui-btn" style=" padding-top: 5px;"  data-action="showVisitInfoView" *ngFor="let expert of item.visit.TIME_1.TYPE_1"
+             tappable (click)="showVisitInfoView(expert.split('_')[2])">
+          {{expert.split("_")[1]}}
+        </div>
+      </td>
+      <td style="width: 114px" colspan="2">
+
+        <div class="ui-btn" style=" padding-top: 5px;"  data-action="showVisitInfoView" *ngFor="let expert of item.visit.TIME_1.TYPE_2"
+             tappable (click)="showVisitInfoView(expert.split('_')[2])">
+          {{expert.split("_")[1]}}
+        </div>
+      </td>
+      <td style="width: 180px" colspan="2">
+        <div class="ui-btn" style=" padding-top: 5px;"  data-action="showVisitInfoView" *ngFor="let expert of item.visit.TIME_1.TYPE_3"
+             tappable (click)="showDeptInfo(expert.split('_')[2])">
+          {{expert.split("_")[1]}}
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td style="width: 47px">下午</td>
+      <td style="width: 94px" colspan="2">
+        <div class="ui-btn" style=" padding-top: 5px;"  data-action="showVisitInfoView" *ngFor="let expert of item.visit.TIME_2.TYPE_1"
+             tappable (click)="showVisitInfoView(expert.split('_')[2])">
+          {{expert.split("_")[1]}}
+        </div>
+      </td>
+      <td style="width: 114px" colspan="2">
+        <div class="ui-btn" style=" padding-top: 5px;"  data-action="showVisitInfoView" *ngFor="let expert of item.visit.TIME_2.TYPE_2"
+             tappable (click)="showVisitInfoView(expert.split('_')[2])">
+          {{expert.split("_")[1]}}
+        </div>
+      </td>
+      <td  style="width: 180px"  colspan="2">
+        <div class="ui-btn" style=" padding-top: 5px;"  data-action="showVisitInfoView" *ngFor="let expert of item.visit.TIME_2.TYPE_3"
+             tappable (click)="showDeptInfo(expert.split('_')[2])">
+          {{expert.split("_")[1]}}
+        </div>
+      </td>
+    </tr>
+  </table>
+  <div style="height: 20px;"></div>
+
+</ion-content>

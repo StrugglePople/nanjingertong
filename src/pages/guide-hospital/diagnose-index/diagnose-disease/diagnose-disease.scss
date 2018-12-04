@@ -1,0 +1,26 @@
+page-diagnose-disease {
+  .disease-item {
+    clear: both;
+  }
+  .disease-item .degree-wrapper {
+    float: left;
+    width: pxTorem(40px);
+    height: pxTorem(40px);
+    border-radius: pxTorem(40px);
+    position: relative;
+  }
+  .disease-item .degree-wrapper .degree-title {
+    position: absolute;
+    top: pxTorem(2px);
+    left: pxTorem(2px);
+    right: pxTorem(2px);
+    bottom: pxTorem(2px);
+    border-radius: pxTorem(36px);
+    line-height: pxTorem(36px);
+  }
+  .disease-item .title {
+    line-height: pxTorem(40px);
+    margin-left: pxTorem(10px);
+    float: left;
+  }
+}

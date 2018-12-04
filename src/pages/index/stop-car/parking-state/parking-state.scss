@@ -1,0 +1,51 @@
+page-parking-state {
+  font-size: 16px;
+  .park-body{
+    margin: 10px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.10);
+    border-radius: 10px;
+    font-size: 16px;
+    width: auto;
+    overflow: hidden;
+    .item-block{
+      //height: 30px;
+    }
+    .item-block .item-inner{
+      border:none;
+    }
+    .fist-item {
+      line-height: 30px;
+      ion-row{
+        padding-left: 0;
+      }
+      .font-weight{
+        font-family: PingFangSC-Regular;
+        font-size: 17px;
+        color: #111111;
+      }
+    }
+    .fist-item.item-block .item-inner{
+      border-bottom: 1px dashed #D2D2D2;
+    }
+
+    .park-bot{
+      height: 44px;
+      padding-right: 10px;
+      div{
+        float: right;
+        height: 24px;
+        line-height: 24px;
+        margin: 10px 8px;
+        padding: 0 10px;
+        color: #ffffff;
+        font-size: 14px;
+        //background: url("../assets/image/index/call-number.png") no-repeat;
+        background-image: linear-gradient(90deg, #878FFF 0%, #6053E2 100%);
+        background-size: 100% 100%;
+        border-radius: 12px;
+      }
+    }
+  }
+
+}

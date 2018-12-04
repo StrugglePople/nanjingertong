@@ -1,0 +1,102 @@
+<!--
+  Generated template for the PaySelectWayPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>支付</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="navCtrl.popToRoot()">
+        <ion-icon name="ios-home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content bg-color-1>
+
+  <!--<div bg-color-light bottom-line *ngIf="option.source == 'regPay' || option.source == 'confirmPay'">
+    <div text-center title-color-1 style="padding: 15px 0">{{app.hospitalName}}</div>
+    <div style="padding: 0 15px 15px" title-color-4>
+      挂号费 : <span title-color-5>{{option.fee}} ￥</span>
+    </div>
+    <div style="padding: 0 15px 15px" title-color-4>
+      挂号科室 : <span title-color-1>{{option.dept.name}}</span>
+    </div>
+    <div style="padding: 0 15px 15px" title-color-4 *ngIf="option.expert">
+      挂号医生 : <span title-color-1>{{option.expert.name}} {{option.expert.title}}</span>
+    </div>
+    <div style="padding: 0 15px 15px" title-color-4  [ngSwitch]="option.schedule.regTime">
+      就诊日期 : <span title-color-1>{{option.schedule.regDate}}</span>
+      <span *ngSwitchCase="'MORNING'" title-color-1>上午</span>
+      <span *ngSwitchCase="'AFTERNOON'" title-color-1>下午</span>
+      <span *ngSwitchDefault title-color-1>全天</span>
+    </div>
+    <div style="padding: 0 15px 15px" title-color-4 *ngIf="option.time">
+      就诊时间 : <span title-color-1>{{option.time.timeline}}</span>
+    </div>
+  </div>-->
+
+  <!--<div bg-color-light bottom-line *ngIf="option.source == 'selfPay' || option.source == 'selfAllPay'">
+    <div text-center title-color-1 style="padding: 15px 0">{{app.hospitalName}}</div>
+    <div style="padding: 0 15px 15px" title-color-4>
+      诊间费用 : <span title-color-5>{{option.fee}} ￥</span>
+    </div>
+  </div>-->
+
+  <div title-color-2 size-small-3 style="line-height: 30px;padding-left: 15px">
+    选择支付方式
+  </div>
+  <ion-list radio-group [(ngModel)]="selectValue" *ngIf="option.source != 'stopCarPay'">
+    <ion-item>
+      <ion-avatar item-start>
+        <img [src]="alipaySrc">
+      </ion-avatar>
+      <ion-label>支付宝支付</ion-label>
+      <ion-radio value="aliPay" checked></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-avatar item-start>
+        <img [src]="wxSrc">
+      </ion-avatar>
+      <ion-label>微信支付</ion-label>
+      <ion-radio value="wxPay"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-avatar item-start>
+        <img [src]="unionPaySrc">
+      </ion-avatar>
+      <ion-label>银行卡支付</ion-label>
+      <ion-radio value="unionPay"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-avatar item-start>
+        <img [src]="cbcpaySrc">
+      </ion-avatar>
+      <ion-label>建设银行支付</ion-label>
+      <ion-radio value="cbcPay" [disabled]="true"></ion-radio>
+    </ion-item>
+  </ion-list>
+
+  <ion-list radio-group [(ngModel)]="selectValue"  *ngIf="option.source == 'stopCarPay'">
+    <ion-item>
+      <ion-avatar item-start>
+        <img [src]="wxSrc">
+      </ion-avatar>
+      <ion-label>微信支付</ion-label>
+      <ion-radio value="wxPay"></ion-radio>
+    </ion-item>
+  </ion-list>
+
+
+  <module-separate></module-separate>
+
+  <button ion-button full round zk-button-full button-theme (click)="pay()">
+    确认支付
+  </button>
+</ion-content>

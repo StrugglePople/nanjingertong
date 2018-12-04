@@ -1,0 +1,54 @@
+<!--
+  Generated template for the PregnantSetDatePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>设置日期</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content bg-color-1>
+  <ion-list>
+    <ion-item *ngIf="member" detail-push class="member-item" tappable (click)="chooseMember()">
+      <div [ngClass]="{'man': member.sex=='MALE', 'woman': member.sex=='FEMALE'}" class="icon"></div>
+      <div class="name" title-color-1>{{member.name}}</div>
+      <div class="mobile" title-color-1>{{member.mobileNo}}</div>
+      <div class="detail-title" title-color-2>已绑定就诊卡{{member.cards ? member.cards.length : 0}}个</div>
+    </ion-item>
+    <ion-item *ngIf="!member" tappable (click)="chooseMember()" detail-push>
+      请选择持卡人
+    </ion-item>
+  </ion-list>
+  <module-separate></module-separate>
+
+  <ion-list>
+    <ion-item-divider>最后一次月经开始日期</ion-item-divider>
+    <ion-item>
+      <ion-icon name="md-calendar" item-start></ion-icon>
+      <ion-datetime displayFormat="YYYY-MM-DD" placeholder="最后一次月经开始日期"
+                    [(ngModel)]="lmpStr" cancelText="取消" doneText="确定"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  <module-separate></module-separate>
+
+  <ion-list>
+    <ion-item-divider>月经周期/天</ion-item-divider>
+    <ion-item>
+      <ion-icon name="ios-clock-outline" item-start></ion-icon>
+      <ion-select [(ngModel)]="mc" cancelText="取消" okText="确定" placeholder="月经周期/天">
+        <ion-option *ngFor="let m of mcs" [value]="m">{{m}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <module-separate [num]="2"></module-separate>
+
+  <button ion-button full round zk-button-full button-theme (click)="searchResult()">查看结果</button>
+
+</ion-content>

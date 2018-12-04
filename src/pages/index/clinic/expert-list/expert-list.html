@@ -1,0 +1,85 @@
+<!--
+  Generated template for the ExpertListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="navCtrl.popToRoot()">
+        <ion-icon name="ios-home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content bg-color-1>
+  <div style="padding: 10px 30px">
+    <ion-segment [(ngModel)]="selectIndex" (ionChange)="segmentChanged($event)" color="green">
+      <ion-segment-button value="0">
+        按专家预约
+      </ion-segment-button>
+      <ion-segment-button value="1">
+        按日期预约
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <ion-scroll scrollX="true" style="height: 5.8rem;" *ngIf="selectIndex == '1'">
+    <ion-grid no-padding [ngStyle]="{'height':'5.8rem','width': dateItems.length * itemWidth + 'rem'}" bg-color-light>
+      <ion-row >
+        <ion-col *ngFor="let date of dateItems" [ngClass]="{'title-color-3': selectdate.dateStr == date.dateStr,
+          'title-color-1': selectdate.dateStr != date.dateStr}"
+                 style="padding: 12px 0" tappable (click)="chooseDate(date)">
+          <div text-center>{{date.week}}</div>
+          <div text-center>{{date.dateStr}}</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-scroll>
+
+  <ion-list top-line>
+    <ion-item detail-push class="expert-item" no-padding (click)="showDeptSchedule()" tappable>
+      <div class="item-top">
+        <div class="image"></div>
+        <div class="title" size-middle title-color-1>{{title}}</div>
+        <div class="dept-flag" size-small-4 text-center>普通门诊</div>
+        <div class="detail-title" size-small-2 title-color-1>
+          前往科室排班
+        </div>
+      </div>
+    </ion-item>
+    <ion-item class="expert-item" no-padding *ngFor="let expert of experts" (click)="showExpertSchedule(expert)" tappable>
+      <div class="item-top">
+        <div class="image">
+          <img [src]="expert.src"
+               style="height: 100%; width: 100%">
+        </div>
+        <div class="title" size-middle title-color-1>{{expert.name}} </div>
+        <div class="clinic-button" size-small-2 text-center [ngClass]="{'active': expert.hasNum}" *ngIf="selectIndex == '1'">
+          <span *ngIf="expert.hasNum">{{expert.btnTitle}}</span>
+          <span *ngIf="!expert.hasNum">已满</span>
+        </div>
+        <div class="expert-flag" size-small-2 text-center>
+          <span>{{expert.title}}</span>
+        </div>
+        <div class="detail-title"  size-small-2 title-color-1 *ngIf="selectIndex == '1'">
+          {{selectdate.dateStr}}
+        </div>
+        <div class="detail-title ellipsis" size-small-2 title-color-4 *ngIf="selectIndex == '0'">
+          {{expert.speciality || expert.introduction || '暂无'}}
+        </div>
+      </div>
+      <div class="item-bottom ellipsis" size-small-2 title-color-4 *ngIf="selectIndex == '1'">
+        {{expert.speciality || expert.introduction}}
+      </div>
+      <i class="icon-arrow" *ngIf="selectIndex == '0'"></i>
+    </ion-item>
+    <empty-view text="该日无专家出诊" *ngIf="!experts.length > 0 && selectIndex == '1'" [excessHeight]="200"></empty-view>
+    <empty-view text="无专家出诊" *ngIf="!experts.length > 0 && selectIndex == 0" [excessHeight]="200"></empty-view>
+
+  </ion-list>
+</ion-content>

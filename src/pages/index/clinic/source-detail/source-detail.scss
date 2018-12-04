@@ -1,0 +1,168 @@
+page-source-detail {
+  .absolute-appoint{
+    position: absolute;border-bottom: 10px;
+  }
+  .source-title {
+    position: relative;
+    font-size: 13px;
+    color: #111111;
+    line-height: 20px;
+    width: auto;
+    height: pxTorem(100px);
+    padding-left: pxTorem(80px);
+    .icon {
+      position: absolute;
+      left: pxTorem(15px);
+      top: pxTorem(20px);
+      background-size: pxTorem(10px) !important;
+      color: #ffffff;
+      border-radius: 50%;
+      text-align: center;
+      height: pxTorem(58px);
+      width: pxTorem(58px);
+      line-height: pxTorem(58px);
+      background-color: #EC6386;
+      font-size: 18px;
+      overflow: hidden;
+    }
+    .name {
+      line-height: 30px;
+      font-size: 20px;
+    }
+    .mobile{
+      font-size: 15px;
+      color: #A5A5A5;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .detail-title{
+      font-size: 14px;
+      color: #888888;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .item-inner{
+      border: none !important;
+    }
+    .introduction{
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      border: 1px solid #EC6386;
+      width: 51px;
+      line-height: 20px;
+      padding-left: 5px;
+    }
+  }
+  .time{
+    padding-left: 30px;
+    line-height: 35px;
+    position: relative;
+    width: 168px;
+    margin: 0 auto;
+    .origin{
+      position: absolute;
+      top: 13px;
+      left: 15px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #FF6B89;
+    }
+  }
+
+  .source-item{
+    border-top: 1px dashed #D2D2D2;
+    &.absolute-appoint{
+      position: absolute;
+      width: 100%;
+      height: 58px;
+      bottom: 0;
+    }
+    ion-col{
+      padding: 10px 0;
+    }
+    .morning{
+      float: left;
+      width: 50%;
+      padding-top: 10px;
+      border-right: 1px solid #EAEAEA;
+      border-bottom: 1px solid #EAEAEA;
+      .source-body .time-icon{
+        position: absolute;
+        top: 0;
+        left: -25px;
+        width: 20px;
+        height: 20px;
+        background: url(../assets/image/index/morning.png) no-repeat 1px 0px;
+        background-size: 18px 18px;
+      }
+    }
+    /*.afternoon{
+      float: left;
+      width: 50%;
+      border-right: 1px solid #EAEAEA;
+      .source-body .time-icon{
+        position: absolute;
+        top: 0;
+        left: -25px;
+        width: 20px;
+        height: 20px;
+        background: url(../assets/image/index/afternoon.png) no-repeat 1px 0px;
+        background-size: 18px 18px;
+      }
+    }*/
+    .source-body{
+      position: relative;
+      //height: 120px;
+      height: 115px;
+      //padding-bottom: 38px;
+      width: 60%;
+      margin: 0 auto;
+      .go-appoint{
+        position: absolute;
+        bottom: 7px;
+        width: 100%;
+        border-radius: 60px;
+        height: 30px;
+        line-height: 30px;
+        color: #ffffff;
+        margin-top: 10px;
+      }
+      .has-source{
+        background: #EC6386;
+      }
+      .no-source{
+        background: #DAD8D8;
+      }
+      .source-time{
+        font-size: 13px;
+        color: #111111;
+      }
+      .source-price{
+        font-size: 17px;
+        color: #FF513C;
+      }
+      .source-type{
+        font-size: 13px;
+        color: #A5A5A5;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        white-space: normal;
+      }
+    }
+  }
+  ion-segment.segment-ios{
+    border-bottom: pxTorem(1px) solid #f1f1f1;
+  }
+  .segment-ios .segment-button{
+    border: none;
+    color: #111111;
+  }
+  .segment-ios .segment-button.segment-activated{
+    color: #EC6386;
+    background-color: inherit;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,125 @@
+<!--
+  Generated template for the DeptListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>科室列表</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="navCtrl.popToRoot()">
+        <ion-icon name="ios-home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div style="height: 48px;">
+    <ion-searchbar class="search-dept" [(ngModel)]="searchStr" (ionInput)="initDept($event)" placeholder="请输入关键字（首字母亦可）"></ion-searchbar>
+  </div>
+  <div class="float-right">
+    <ion-row>
+      <ion-col>
+        <div class="search-type" tappable (click)="getItems(false)">搜科室</div>
+      </ion-col>
+      <ion-col>
+        <div class="search-type" tappable (click)="getItems(true)">搜医生</div>
+      </ion-col>
+    </ion-row>
+
+
+  </div>
+  <ion-grid no-padding *ngIf="!isExpert">
+    <ion-row>
+      <ion-col col-5 class="depts">
+        <ion-scroll scrollY="true" [ngStyle]="{'height': scrollHeight + 'px'}">
+          <ion-list class="dept-list">
+            <div *ngFor="let item of searchDepts">
+              <div class="item item-divider item-ios item-divider-ios item-ios-light item-divider-ios-light">
+                <ion-label style="padding: 0.5rem 1rem 0.5rem 0;margin: 0">{{item.key}}</ion-label>
+              </div>
+              <ion-item class="white-space" title-color-1 bg-color-1 *ngFor="let item1 of item.list" [ngClass]="{'selected': selectOneDept.id == item1.id}"
+                        tappable (click)="getScheduleList(item1)">
+                {{item1.name}}
+              </ion-item>
+            </div>
+          </ion-list>
+        </ion-scroll>
+      </ion-col>
+      <ion-col col-7 *ngIf="searchDepts.length > 0">
+        <ion-scroll scrollY="true" [ngStyle]="{'height': scrollHeight + 'px'}">
+          <div bg-color-1 style="padding: 8px;" *ngIf="selectOneDept.zhuzhi">
+            {{selectOneDept.zhuzhi}}
+          </div>
+          <ion-list class="dept-list">
+            <ion-item class="pay-list" tappable (click)="showDeptSchedule()" *ngIf="appointType != 'introduce'">  <!-- (click)="pushView('SourceDetail')"-->
+              <div text-center title-color-light class="left-icon left-icon-common">
+                普通
+              </div>
+              <div class="right-content">
+                <div class="type">普通号</div>
+                <div class="date">其他</div>
+              </div>
+              <div class="call-num" *ngIf="iscallNum">
+                <div class="call-num-titie">当前叫号
+                  <div class="call-num-inter"></div>
+                </div>
+                <div class="call-now-num">18</div>
+              </div>
+            </ion-item>
+            <ion-item class="pay-list" *ngFor="let expert of experts"  (click)="showExpertSchedule(expert)" tappable>
+              <div text-center title-color-light class="left-icon left-icon-expert">
+                <img [src]="doctorDefail + expert.picName" />
+              </div>
+              <div class="right-content">
+                <div class="type">{{expert.name}}</div>
+                <div class="date">{{expert.title}}</div>
+              </div>
+              <div class="call-num" *ngIf="iscallNum">
+                <div class="call-num-titie">当前叫号
+                  <div class="call-num-inter"></div>
+                </div>
+                <div class="call-now-num">18</div>
+              </div>
+            </ion-item>
+          </ion-list>
+        </ion-scroll>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list *ngIf="isExpert">
+    <div *ngFor="let item of searchExpert">
+      <div class="item item-divider item-ios item-divider-ios item-ios-light item-divider-ios-light">
+        <ion-label style="margin: 0.5rem 1rem 0.5rem 0" title-color-3>{{item.key}}</ion-label>
+      </div>
+      <div *ngFor="let expert of item.list">
+        <ion-item detail-push class="expert-item" no-padding *ngFor="let dept of expert.underDepts" (click)="selectExpert(expert,dept)" tappable>
+          <div class="item-top">
+            <div class="image">
+              <img [src]="doctorDefail + expert.picName"
+                   style="height: 100%; width: 100%">
+            </div>
+            <div class="title" size-middle title-color-1>{{expert.name}}  <!--<span size-small-2 title-color-2></span>--></div>
+            <div class="expert-flag" size-small-2 text-center>
+              <span>{{expert.title}}</span>
+            </div>
+            <div class="detail-title" size-small-2 title-color-2>
+              <!--前往<span>专家</span>排班-->
+              {{dept.name}}
+            </div>
+          </div>
+          <div class="item-bottom ellipsis" size-small-2 title-color-4>
+            {{expert.speciality || expert.introduction}}
+          </div>
+        </ion-item>
+      </div>
+
+    </div>
+  </ion-list>
+  <!--<div *ngIf="searchDepts.length == 0">没有对应结果</div>-->
+</ion-content>

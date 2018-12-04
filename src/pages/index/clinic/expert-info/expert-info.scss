@@ -1,0 +1,12 @@
+page-expert-info,page-dept-info {
+  .appointment-type .col{
+    text-align: center;
+  }
+  .appointment-type .col button{
+    text-align: center;
+    width: 80%;
+    //background-color: #429cd6;
+    background-image: linear-gradient(90deg, #878FFF 0%, #6053E2 100%);
+    border-radius: 22px;
+  }
+}

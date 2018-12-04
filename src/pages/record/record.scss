@@ -1,0 +1,31 @@
+page-record {
+
+  .nine-lattice{
+    ion-row{
+      margin: 0 8px;
+      .fun-col{
+        margin: 0;
+        padding: 8px;
+        //height: 150px;
+        img{
+          //box-shadow: 0 3px 18px 0 rgba(0,0,0,0.10);
+          //border-radius: 14px;
+          width: 80%;
+          display: block;
+          margin: 10px auto 10px;
+        }
+        .title-name{
+          //position: absolute;
+          //left: 0;
+          //bottom: 25px;
+          width: 100%;
+          text-align: center;
+          font-family: PingFangSC-Regular;
+          font-size: 16px;
+          color: #333333;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,50 @@
+<!--
+  Generated template for the PayResultPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>缴费记录</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showParkingPayRecord()">
+        刷新
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content bg-color-1>
+  <div class="park-main" *ngFor="let item of paylist">
+    <div class="park_1">
+      <span class="title">车&nbsp;&nbsp;牌&nbsp;&nbsp;号：</span>
+      <span class="content">{{item.plateNo}}</span>
+    </div>
+    <div class="park_1">
+      <span class="title">入场时间：</span>
+      <span class="content">{{item.entryTime}}</span>
+    </div>
+    <div class="park_1">
+      <span class="title">缴费时间：</span>
+      <span class="content red">{{item.payTime}}</span>
+    </div>
+    <div class="park_1">
+      <span class="title">停车时间：</span>
+      <span class="content red">{{(item.elapsedTime/60).toString().split('.')[0]-0 >0 ? (item.elapsedTime/60).toString().split('.')[0] + '小时':''}}{{(item.elapsedTime%60)+ '分钟'}}</span>
+    </div>
+    <div class="park_1">
+      <span class="title">已付款：</span>
+      <span class="content red">￥&nbsp;{{item.payable}}</span>
+    </div>
+
+
+  </div>
+
+
+  <empty-view *ngIf="!paylist.length > 0" [text]="'没有相关记录'"></empty-view>
+
+
+</ion-content>

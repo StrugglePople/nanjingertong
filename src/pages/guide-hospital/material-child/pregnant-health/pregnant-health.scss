@@ -1,0 +1,12 @@
+$tabs: 'test', 'note';
+@for $i from 1 through length($tabs) {
+  $item: nth($tabs, $i);
+  .ion-ios-#{$item} {
+    @extend .ion-tab-icon-base;
+    content: url("../assets/image/tabs/#{$item}-select-bar.png");
+  }
+  .ion-ios-#{$item}-outline {
+    @extend .ion-tab-icon-base;
+    content: url("../assets/image/tabs/#{$item}-bar.png");
+  }
+}

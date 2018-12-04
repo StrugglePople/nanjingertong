@@ -1,0 +1,13 @@
+page-hospital-in-nav {
+  .building-bg.guangzhou {
+    background: url("../assets/image/guide-hospital/hospital-building-nav.jpg") no-repeat;
+    background-size: 100%;
+  }
+  .building-bg.hexi {
+    background: url("../assets/image/guide-hospital/hospital-bulidinghexi-nav.jpg") no-repeat;
+    background-size: 100%;
+  }
+  .col.activated, div.activated{
+    background-color: transparent;
+  }
+}

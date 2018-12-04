@@ -1,0 +1,68 @@
+<!--
+  Generated template for the AppointmentRecord page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{regType == 0?'预约':'挂号'}}记录</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content bg-color-1>
+  <ion-item detail-push tappable (click)="pushMemberSelectView()" style="margin-bottom: 10px;" class="select-person-page">
+    {{(member && member.name)?member.name:'选择持卡人'}} <span *ngIf="member && member.id">{{member.sex == 'FEMALE'?'女':'男'}}&nbsp; | &nbsp;{{member.mobileNo}}</span>
+  </ion-item>
+  <ion-refresher (ionRefresh)="doLoad($event)" *ngIf="member && member.id > 0">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list class="record-list0" *ngIf="dataList.length > 0">
+
+    <!--<ion-item detail-push class="has-point">
+      <div class="point"></div>
+      <div class="bar"></div>
+      <ion-row>
+        <ion-col>2017-11-22  15:43</ion-col>
+        <ion-col text-right title-color-red>待就诊</ion-col>
+      </ion-row>
+      <div size-big-1>
+        <span font-weight-800>{{}} &nbsp;&nbsp; 俞惠民</span>
+      </div>
+    </ion-item>-->
+
+
+    <div>   <!--*ngFor="let item1 of dataList"-->
+      <!--<ion-item-divider color="light">
+        <div class="record-divider">{{item.monthName}}</div>
+      </ion-item-divider>-->
+      <ion-item detail-push class="has-point" *ngFor="let item1 of dataList index as i" [ngClass]="{'first':i==0,'end':i==dataList.length-1}"
+                tappable (click)="pushView('AppointmentRecordDetailPage',item1)">
+        <div class="point"></div>
+        <div class="bar"></div>    <!--[ngClass]="{'can-cancel':item1.canCancel}"-->
+        <ion-row>
+          <ion-col title-color-2>{{item1.regDate}}</ion-col>
+          <ion-col text-right title-color-red><!--待就诊--></ion-col>
+        </ion-row>
+        <div size-big-1 class="center-content" font-weight-600>
+          <ion-row>
+            <ion-col size-middle col-8 text-over>{{item1.dept}}</ion-col>
+            <ion-col size-small-1 col-4 text-right>{{item1.expertName?item1.expertName:''}}</ion-col>
+          </ion-row>
+          <!--<span size-middle>{{item1.dept}} &nbsp;&nbsp; </span><span size-small-1>{{item1.expertName?item1.expertName:''}}</span>-->
+          <div class="type" [ngClass]="{'isExpert':item1.isExpert}"></div>
+        </div>
+        <!--<div class="cancel-appoint" *ngIf="item1.canCancel">
+          取消预约
+        </div>-->
+      </ion-item>
+    </div>
+  </ion-list>
+  <div tappable (click)="getServiceData()" *ngIf="hasMore" title-color-2 size-small-2 text-center style="line-height: 40px">
+    更多历史
+  </div>
+  <empty-view *ngIf="!dataList.length > 0"></empty-view>
+</ion-content>

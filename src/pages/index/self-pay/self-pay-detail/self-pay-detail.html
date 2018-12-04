@@ -1,0 +1,128 @@
+<!--
+  Generated template for the SelfPayDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>缴费详情</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content bg-color-1>
+  <ion-list>
+    <ion-item>
+      <div class="row">
+        <div class="col col-40 title-color-1">姓名</div>
+        <div class="col col-60 title-color-1" style="text-align: right">
+          {{data.patientName}}
+        </div>
+      </div>
+    </ion-item>
+    <ion-item>
+      <div class="row">
+        <div class="col col-40 title-color-1">划价单号</div>
+        <div class="col col-60 title-color-1" style="text-align: right">
+          {{data.paymentNO}}
+        </div>
+      </div>
+    </ion-item>
+    <ion-item>
+      <div class="row">
+        <div class="col col-40 title-color-1">就诊卡号</div>
+        <div class="col col-60 title-color-1" style="text-align: right">
+          {{data.medicalCardNO}}
+        </div>
+      </div>
+    </ion-item>
+    <ion-item>
+      <div class="row">
+        <div class="col col-40 title-color-1">总额</div>
+        <div class="col col-60 title-color-1" style="text-align: right">
+          {{data.totalFee}}
+        </div>
+      </div>
+    </ion-item>
+    <ion-item>
+      <div class="row">
+        <div class="col col-40 title-color-1">自费</div>
+        <div class="col col-60 title-color-1" style="text-align: right">
+          {{data.totalFee - data.totalMedicalFee}}
+        </div>
+      </div>
+    </ion-item>
+    <ion-item *ngIf="data.wind">
+      <div class="row">
+        <div class="col col-40 title-color-1">取药窗口</div>
+        <div class="col col-60 title-color-1" style="text-align: right">
+          {{data.wind}}
+        </div>
+      </div>
+    </ion-item>
+    <ion-item *ngIf="data.status!='INIT'">
+      <div class="row">
+        <div class="col col-40 title-color-1">缴费状态</div>
+        <div class="col col-60 title-color-1" style="text-align: right;color: #ffc714;">
+          {{data.statusStr}}
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <module-separate></module-separate>
+
+  <ion-list>
+    <ion-item>
+      <ion-row title-color-1>
+        <ion-col>
+          {{data.billType}}
+        </ion-col>
+        <ion-col text-right>
+          小计<span title-color-5>￥{{data.totalFee}}</span>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item class="record-cell" *ngFor="let item of data.billDetailList">
+      <ion-row>
+        <ion-col title-color-4>
+          {{item.itemType}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col title-color-4 size-small-3>
+          {{item.itemName}}
+        </ion-col>
+        <ion-col title-color-4 size-small-3 text-right>
+          ￥{{item.itemFee}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+  <ion-row bottom-line bg-color-light size-small-1 title-color-1 style="padding: 1rem">
+    <ion-col right-line text-center>
+      医保<span title-color-5>￥{{data.totalMedicalFee}}</span>
+    </ion-col>
+    <ion-col text-center>
+      个人<span title-color-5>￥{{(data.totalFee - data.totalMedicalFee).toFixed(2)}}</span>
+    </ion-col>
+  </ion-row>
+  <div style="text-align: center;margin-top: 15px;">
+    <canvas id="canvas"></canvas>
+  </div>
+</ion-content>
+
+<ion-footer top-line *ngIf="data.status=='INIT'">
+  <ion-row bg-color-light>
+    <ion-col col-3></ion-col>
+    <ion-col col-5 title-color-1 text-center style="padding:15px">
+      合计 <span title-color-5>￥{{(data.totalFee - data.totalMedicalFee).toFixed(2)}} </span>
+    </ion-col>
+    <ion-col col-4 text-center size-big-1 title-color-light style="background-color: #ffc714;padding: 13px 15px" (click)="pay()">
+      支付
+    </ion-col>
+  </ion-row>
+</ion-footer>

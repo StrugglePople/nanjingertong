@@ -1,0 +1,42 @@
+ion-modal.opacity-3 {
+  ion-backdrop{
+    visibility: visible;
+  }
+  .modal-wrapper{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999999;
+    height: auto;
+  }
+
+
+}
+page-province-model.ion-page.show-page{
+  .province-list {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left:0;
+    right:0;
+    span{
+      display: inline-block;
+      width: 11%;
+      height: 35px;
+      line-height: 35px;
+      text-align: center;
+      margin: 8px 2%;
+      background-color: #95c268;
+      color: #fff;
+
+    }
+  }
+  .content-center{
+    width: auto;
+    margin: 0 auto;
+
+  }
+
+}

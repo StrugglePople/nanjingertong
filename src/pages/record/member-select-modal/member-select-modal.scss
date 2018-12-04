@@ -1,0 +1,89 @@
+//page-member-select-modal {
+  .member-sex .col {
+    height: pxTorem(30px);
+  }
+  .add-btn-icon {
+    background: url("../assets/image/center/center-add-btn.png");
+    background-size: pxTorem(20px) pxTorem(20px);
+  }
+  .member-item {
+    position: relative;
+    font-size: 13px;
+    color: #111111;
+    line-height: 20px;
+    margin: 15px;
+    width: auto;
+    box-shadow: 0 6px 18px 0 rgba(0,0,0,0.10);
+    border-radius: 10px;
+    height: pxTorem(100px);
+    padding-left: pxTorem(70px);
+  }
+  .member-item .icon {
+    position: absolute;
+    left: pxTorem(15px);
+    top: pxTorem(20px);
+    background-size: pxTorem(10px) !important;
+    color: #ffffff;
+    border-radius: 50%;
+    text-align: center;
+    height: pxTorem(42px);
+    width: pxTorem(42px);
+    line-height: pxTorem(42px);
+  }
+  .member-item .icon.man {
+    //background: url("../assets/image/center/center-man-icon.png") no-repeat;
+
+    background-color: #EC6386;
+  }
+  .member-item .icon.woman {
+    //background: url("../assets/image/center/center-woman-icon.png") no-repeat;
+    background-color: #FF9571;
+  }
+  .member-item .name {
+    line-height: 30px;
+    font-size: 18px;
+
+    span{
+      font-size: 13px;
+      color: #A5A5A5;
+    }
+    /*position: absolute;
+    top: pxTorem(15px);
+    left: pxTorem(45px);
+    font-size: pxTorem(16px);
+    height: pxTorem(16px);*/
+  }
+  .member-item .mobile {
+    /*position: absolute;
+    bottom: pxTorem(15px);
+    left: pxTorem(45px);
+    font-size: pxTorem(16px);
+    height: pxTorem(16px);*/
+  }
+  .member-item .detail-title {
+    /*position: absolute;
+    right: pxTorem(39px);
+    top: 0;
+    font-size: pxTorem(15px);
+    line-height: pxTorem(72px);*/
+  }
+  .member-item .moren{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: pxTorem(33px);
+    height: pxTorem(33px);
+    background: url("../assets/image/center/center-moren.png") no-repeat;
+    background-size: pxTorem(33px);
+  }
+  .member-list .item {
+    padding: pxTorem(5px) pxTorem(15px);
+  }
+
+//}
+
+page-member-select-modal{
+  .add-member{
+    background-image: linear-gradient(90deg, #878FFF 0%, #6053E2 100%);
+  }
+}

@@ -1,0 +1,50 @@
+<!--
+  Generated template for the HepatitisBSelfTest page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>乙肝自测</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="navCtrl.popToRoot()">
+        <ion-icon name="ios-home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content bg-color-1>
+  <p title-color-3 size-middle text-center>请对照医院检查结果进行选择</p>
+
+  <div>
+    <div class="hepatitis-item" *ngFor="let item of items">
+      <div class="title" title-color-1>{{item.title}}</div>
+      <ion-grid no-padding>
+        <ion-row>
+          <ion-col class="radio-col" tappable (click)="param[item.property] = 1">
+            阴性（-）
+            <div class="radio" [ngClass]="{'checked' : param[item.property] == 1}">
+              <div class="icon"></div>
+            </div>
+          </ion-col>
+          <ion-col class="radio-col" tappable (click)="param[item.property] = 2">
+            阳性（+）
+            <div class="radio" [ngClass]="{'checked' : param[item.property] == 2}">
+              <div class="icon"></div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+  <module-separate num="2"></module-separate>
+
+  <button ion-button full round button-theme zk-button-full tappable (click)="searchHepatitis()">查看结果</button>
+
+</ion-content>

@@ -1,0 +1,10 @@
+page-faq-detail {
+  .faq-question, .faq-answer {
+    margin: 0 pxTorem(12px);
+    padding: pxTorem(5px) 0;
+    line-height: pxTorem(20px);
+  }
+  .faq-question {
+    color: red;
+  }
+}

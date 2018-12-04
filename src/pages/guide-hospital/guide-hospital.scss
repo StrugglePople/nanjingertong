@@ -1,0 +1,143 @@
+page-guide-hospital {
+
+  .top-img{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    img{
+      display: block;
+      width: 100%;
+    }
+  }
+  .hospital-guide{
+    height: 90px;
+    background: #ffffff;
+    margin: 15px 0;
+    .left{
+      background: url("../assets/image/guide-hospital/hospital-introdution.png") no-repeat center center;
+      background-size: cover;
+    }
+    .right{
+      background: url("../assets/image/guide-hospital/jiuyizhinan.png") no-repeat center center;
+      background-size: cover;
+    }
+  }
+
+}
+
+
+page-guide-hospital,page-index {
+  .introduce{
+    @for $i from 1 through 5{
+      .title-#{$i}{
+        background: url("../assets/image/guide-hospital/title-#{$i}.png") no-repeat 15px center;
+      }
+    }
+    background: #ffffff;
+    //border-top: 1px solid #EDEDED;
+    margin-bottom: 15px;
+    .title{
+      position: relative;
+      line-height: 40px;
+      padding-left: 43px;
+      //border-bottom: 1px solid #EDEDED;
+      background-size: 18px auto;
+      font-size: 15px;
+      color: #333333;
+      .more{
+        position: absolute;
+        width: 46px;
+        right: 15px;
+        top: 0;
+        font-size: 14px;
+        color: #A5A5A5;
+      }
+    }
+    .list-ios > .item-block:first-child{
+      border-top: none !important;
+    }
+    .health-info{
+      margin: 0 10px 10px;
+      box-shadow: 0 0 18px 0 rgba(0,0,0,0.10);
+      border-radius: 14px;
+      overflow: hidden;
+
+      ion-col{
+        overflow: hidden;
+        line-height: 31px;
+        padding: 0;
+        text-overflow: ellipsis;
+        font-size: 15px;
+      }
+    }
+    .depts{
+      padding: 0;
+      //margin: 0;
+      border-top: 1px solid #EDEDED;
+      li{
+        list-style: none;
+        border: 1px solid #EDEDED;
+        border-top:none;
+        border-right:none;
+        float: left;
+        width: 50%;
+        height: 45px;
+        text-overflow: clip;
+        overflow: hidden;
+        box-sizing: border-box;
+      }
+
+      line-height: 45px;
+      text-align: center;
+    }
+    .expert-new{
+      padding: 0;
+      margin: 0;
+      line-height: 45px;
+      text-align: center;
+      border-bottom: 1px solid #EDEDED;
+      li{
+        position: relative;
+        list-style: none;
+        width: 25%;
+        border: 1px solid #EDEDED;
+        border-top:none;
+        border-left:none;
+        float: left;
+        height: 125px;
+        padding-top: 75px;
+        line-height: 23px;
+        overflow: hidden;
+        p{
+          color: #7f7f7f;
+        }
+        .header{
+          position: absolute;
+          width: 64%;
+          top: 5px;
+          left: 18%;
+          border-radius: 50%;
+          overflow: hidden;
+        }
+      }
+    }
+    /*.expert{
+      line-height: 45px;
+      text-align: center;
+      border-bottom: 1px solid #EDEDED;
+      ion-col{
+        height: 120px;
+        padding-top: 70px;
+        line-height: 23px;
+        border-right: 1px solid #EDEDED;
+        p{
+          color: #7f7f7f;
+        }
+      }
+    }*/
+  }
+  .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+    border-bottom: none !important;
+  }
+}

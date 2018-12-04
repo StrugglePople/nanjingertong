@@ -1,0 +1,55 @@
+<!--
+  Generated template for the HospitalIntroduction page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>医院简介</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="navCtrl.popToRoot()">
+        <ion-icon name="ios-home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="top-img" *ngIf="imgUrlPrefix">
+    <img [src]="imgUrlPrefix">
+  </div>
+  <ion-grid no-padding bottom-line>
+    <ion-row>
+      <ion-col class="zk-tab-col" [class.title-color-3]="index==0" [class.title-color-1]="index!=0" tappable (click)="selectTab(0)">
+        医院简介
+        <div class="flag" bg-color-main *ngIf="index==0"></div>
+      </ion-col>
+      <ion-col class="zk-tab-col" [class.title-color-3]="index==1" [class.title-color-1]="index!=1" tappable (click)="selectTab(1)">
+        医院交通
+        <div class="flag" bg-color-main *ngIf="index==1"></div>
+      </ion-col>
+      <ion-col class="zk-tab-col" [class.title-color-3]="index==2" [class.title-color-1]="index!=2" tappable (click)="selectTab(2)">
+        官方网站
+        <div class="flag" bg-color-main *ngIf="index==2"></div>
+      </ion-col>
+      <ion-col class="zk-tab-col" [class.title-color-3]="index==3" [class.title-color-1]="index!=3" tappable (click)="selectTab(3)">
+        医院电话
+        <div class="flag" bg-color-main *ngIf="index==3"></div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div  style="padding: 15px">
+    <div [hidden]="(index != 0)" [innerHtml]="content[0] | safeHtml"></div>
+    <div [hidden]="(index != 1)" [innerHtml]="content[1] | safeHtml"></div>
+    <div [hidden]="(index != 2)" text-center #site>
+      <span [innerHtml]="content[2]" title-color-3 tappable (click)="showWebSite()"> </span>
+    </div>
+    <div [hidden]="(index != 3)"  text-center #phone>
+      <p *ngFor="let item of content[3]" style="line-height: 30px;">
+        <span tappable (click)="call(item)" title-color-3>{{item}}</span>
+      </p>
+    </div>
+  </div>
+</ion-content>

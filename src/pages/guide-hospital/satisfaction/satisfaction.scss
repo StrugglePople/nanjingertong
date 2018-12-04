@@ -1,0 +1,62 @@
+page-satisfaction {
+  .select-content{
+    height: pxTorem(60px);
+    position: relative;
+  }
+  .select-content .left-zan{
+    position: absolute;
+    left: pxTorem(15px);
+    top: pxTorem(10px);
+    background: url("../assets/image/guide-hospital/down-zan.png") no-repeat;
+    width: pxTorem(40px);
+    height: pxTorem(40px);
+    background-size: pxTorem(40px) pxTorem(40px);
+  }
+  .select-content .right-zan{
+    position: absolute;
+    right: pxTorem(15px);
+    top: pxTorem(10px);
+    background: url("../assets/image/guide-hospital/up-zan.png") no-repeat;
+    width: pxTorem(40px);
+    height: pxTorem(40px);
+    background-size: pxTorem(40px) pxTorem(40px);
+  }
+  .select-content .select-list {
+    position: absolute;
+    height: pxTorem(60px);
+    left: pxTorem(60px);
+    right: pxTorem(60px);
+    top: pxTorem(0px);
+  }
+  .select-list .col {
+    margin: 0 5px;
+  }
+  .select-list .col .line {
+    position: absolute;
+    height: pxTorem(6px);
+    bottom: 0;
+    width: 100%;
+    background-color: #dbdbdb;
+    left: 0;
+    right: 0;
+  }
+  .select-list .col.sel .line {
+    background-color: #ffbb34;
+  }
+  .col.sel.active .mark-sign {
+    position: absolute;
+    left: 50%;
+    margin-left: pxTorem(-13px);
+    background: url("../assets/image/guide-hospital/mark-sign.png") no-repeat;
+    width: pxTorem(25px);
+    height: pxTorem(30px);
+    background-size: pxTorem(25px) pxTorem(30px);
+  }
+  textarea {
+    width: pxTorem(300px);
+    margin: 0 auto;
+    height: pxTorem(100px);
+    border-radius: pxTorem(5px);
+    padding: pxTorem(5px);
+  }
+}

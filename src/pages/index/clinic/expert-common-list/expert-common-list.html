@@ -1,0 +1,44 @@
+<!--
+  Generated template for the ExpertCommonListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>专家列表</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="navCtrl.popToRoot()">
+        <ion-icon name="ios-home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content bg-color-1>
+  <ion-list>
+    <ion-item detail-push class="expert-item" no-padding *ngFor="let expert of experts" (click)="clickExpert(expert)" tappable>
+      <div class="item-top">
+        <div class="image">
+          <img [src]="expert.src"
+               style="height: 100%; width: 100%">
+        </div>
+        <div class="title" size-middle title-color-1>{{expert.name}}</div>
+        <div class="expert-flag" size-small-2 text-center>
+          <span>{{expert.title}}</span>
+        </div>
+        <div class="detail-title" size-small-2 title-color-2>
+          前往<span>专家</span>排班
+        </div>
+      </div>
+      <div class="item-bottom ellipsis" size-small-2 title-color-4>
+        {{expert.speciality || expert.introduction}}
+      </div>
+    </ion-item>
+    <empty-view text="无专家" *ngIf="!experts.length > 0" [excessHeight]="200"></empty-view>
+
+  </ion-list>
+</ion-content>

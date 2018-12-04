@@ -1,0 +1,35 @@
+page-chufang-record-detail {
+  .chu-fang-item {
+    background: #ffffff;
+    position: relative;
+    margin: 10px 15px;
+    /*border: 1px solid #cdcdcd;*/
+  }
+  .chu-fang-item .chu-fang-info{
+    position: relative;
+    min-height: 35px;
+    border: 1px solid #cdcdcd;
+    border-width: 0px 1px 1px 1px;
+  }
+  .chu-fang-item .chu-fang-info:first-child{
+    border-width: 1px 1px 1px 1px;
+  }
+  .chu-fang-info .name{
+    position: relative;
+    font-size: 14px;
+    left: 0px;
+    padding: 8px;;
+  }
+  .chu-fang-info .value{
+    position: absolute;
+    right: 0px;
+    padding: 8px;
+    top: 0px;
+    font-size: 14px;
+  }
+  .chu-fang-info .content{
+    left: 0px;
+    padding: 5px;
+    font-size: 14px;
+  }
+}

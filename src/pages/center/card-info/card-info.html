@@ -1,0 +1,78 @@
+<!--
+  Generated template for the CardInfo page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>就诊卡信息</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="navCtrl.popToRoot()">
+        <ion-icon name="ios-home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content bg-color-1>
+  <ion-list>
+    <ion-item>
+      <ion-grid no-padding>
+        <ion-row>
+          <ion-col>医院</ion-col>
+          <ion-col title-color-1 text-right>{{hospitalName}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <ion-item>
+      <ion-grid no-padding>
+        <ion-row>
+          <ion-col *ngIf="type!='jiuZhen'">住院号</ion-col>
+          <ion-col *ngIf="type=='jiuZhen'">卡号</ion-col>
+          <ion-col title-color-1 text-right>{{card.medicalCardNo}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <ion-item *ngIf="type=='jiuZhen'">
+      <ion-grid no-padding>
+        <ion-row>
+          <ion-col>卡类型</ion-col>
+          <ion-col title-color-1 text-right>{{card.medicalCardType}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <ion-item>
+      <ion-grid no-padding>
+        <ion-row>
+          <ion-col>持卡人</ion-col>
+          <ion-col title-color-1 text-right>{{member.name}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <ion-item>
+      <ion-grid no-padding>
+        <ion-row>
+          <ion-col>手机</ion-col>
+          <ion-col title-color-1 text-right>{{member.mobileNo}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+  <module-separate></module-separate>
+  <!--<div style="text-align: center">-->
+    <!--<img [src]="qrSrc" style="height: 15rem; width: 15rem">-->
+  <!--</div>-->
+
+  <!--<module-separate></module-separate>-->
+  <!--<div style="text-align: center">-->
+    <!--<canvas id="canvas2"></canvas>-->
+  <!--</div>-->
+  <module-separate></module-separate>
+  <button ion-button full round zk-button-full color="danger" (click)="deleteCard('jiuZhen')" *ngIf="type=='jiuZhen'">删除就诊卡</button>
+  <button ion-button full round zk-button-full color="danger" (click)="deleteCard('zhuYuan')" *ngIf="type!='jiuZhen'">删除住院号</button>
+  <module-separate num="2"></module-separate>
+</ion-content>

@@ -1,0 +1,128 @@
+<!--
+  Generated template for the DeptInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{regType == 'common'?'科室详情':'专家详情'}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="navCtrl.popToRoot()">
+        <ion-icon name="ios-home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-item class="source-title">
+    <div class="icon" *ngIf="regType == 'common'">
+      普通
+    </div>
+    <div class="icon" *ngIf="regType == 'expert'">
+      <img [src]="doctorDefail + expertInfo.picName" />
+    </div>
+    <div class="name" title-color-1>{{expertInfo.name?expertInfo.name:'普通号'}}</div>
+    <div class="mobile">{{dept.name}}</div>
+    <!--<div class="detail-title">擅长：{{commonInfo.speciality}}</div>-->
+    <!--<div class="introduction">简介</div>-->
+  </ion-item>
+
+  <ion-segment [(ngModel)]="selectIndex" color="green">
+    <ion-segment-button value="0">
+      {{guahaoType == 'SCHEDULE_REALTIME'?'挂号':'预约'}}
+    </ion-segment-button>
+    <ion-segment-button value="1">
+      介绍
+    </ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="selectIndex">
+    <div *ngSwitchCase="0">
+      <div *ngFor="let onedate of regScheduleVOList" style="position: relative;">
+        <div class="time">
+          <div class="origin"></div>
+          {{onedate.date +' ' + onedate.week}}
+        </div>
+        <div class="source-item clearfix">
+          <div class="morning" *ngFor="let schedule of onedate.map">
+            <div class="source-body">
+              <!--<div class="time-icon"></div>-->
+              <div class="source-time">{{schedules[schedule.regTime]}}</div>
+              <div class="source-price">
+                <span style="font-size: 12px;">￥</span>
+                <span style="font-weight: 600">{{schedule.price}}</span>
+              </div>
+              <div class="source-type ellipsis">{{schedule.outCallType == 'DEPT_COMMON'?'普通':'专家'}}：{{dept.name}}</div>
+              <div class="go-appoint has-source" text-center tappable (click)="chooseSchedule(schedule)" *ngIf="guahaoType != 'SCHEDULE_REALTIME'|| schedule.leftNum > 0">
+                挂号
+                <!--{{guahaoType == 'SCHEDULE_REALTIME'?'挂号':'详情'}}-->
+              </div>
+              <div class="go-appoint" *ngIf="guahaoType == 'SCHEDULE_REALTIME' && schedule.leftNum <= 0" text-center bg-color-1>
+                已满
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <empty-view *ngIf="!regScheduleVOList.length > 0" [text]="'暂无排班'" [excessHeight]="150"></empty-view>
+    </div>
+    <div *ngSwitchCase="1">
+      <div class="icon-content-wrapper" bg-color-light>
+        <div class="icon-header">
+          <i class="icon position"></i>
+          <div class="title" size-small-1 title-color-1>执业点</div>
+        </div>
+        <div class="content" size-small-2 title-color-4>
+          {{commonInfo.location}}
+        </div>
+      </div>
+
+
+      <div class="icon-content-wrapper" top-bottom-line bg-color-light>
+        <div class="icon-header">
+          <i class="icon specialize"></i>
+          <div class="title" size-small-1 title-color-1>擅长</div>
+          <!--<div class="right-btn title-color-3 size-14" (click)="sb=!sb" tappable>
+            <span *ngIf="!sb">展开</span>
+            <span *ngIf="sb">收起</span>
+          </div>-->
+        </div>
+        <div class="content size-14 title-color-4" [ngClass]="{'ellipsis': !sb}">
+          {{commonInfo.speciality}}
+        </div>
+      </div>
+      <div class="icon-content-wrapper" top-bottom-line bg-color-light>
+        <div class="icon-header">
+          <i class="icon abstract"></i>
+          <div class="title" size-small-1 title-color-1>简介</div>
+          <!--<div class="right-btn title-color-3 size-14" (click)="ib=!ib" tappable>
+            <span *ngIf="!ib">展开</span>
+            <span *ngIf="ib">收起</span>
+          </div>-->
+        </div>
+        <div class="content size-14 title-color-4" [ngClass]="{'ellipsis': !ib}">
+          {{commonInfo.introduction}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</ion-content>

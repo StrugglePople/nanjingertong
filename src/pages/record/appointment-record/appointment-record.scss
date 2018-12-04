@@ -1,0 +1,73 @@
+page-appointment-record {
+  .record-list0{
+    ion-item{
+      min-height: 82px;
+      padding-left: 40px;
+      font-size: 14px;
+      .center-content{
+        font-size: 18px;
+      }
+    }
+    .cancel-appoint{
+      width: 80px;
+      line-height: 30px;
+      border: 1px solid #EC6386;
+      border-radius: 2px;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .center-content{
+      position: relative;
+      .type{
+        position: absolute;
+        top: -26px;
+        right: 15px;
+        width: 25px;
+        height: 28px;
+        background: url("../assets/image/record/common.png") no-repeat center 0;
+        background-size: 100% auto;
+      }
+      .type.isExpert{
+        background: url("../assets/image/record/expert.png") no-repeat center 0;
+        background-size: 100% auto;
+      }
+    }
+    .has-point{
+      position: relative;
+      .point{
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        background-color: #41C7B4;
+        left: 14px;
+        border: 2px solid #FFFFFF;
+        box-sizing: inherit;
+        z-index: 999999;
+        border-radius: 50%;
+        top: 20px;
+      }
+      .bar{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 20px;
+        width: 2px;
+        background-color: #41C7B4;
+      }
+    }
+    .has-point.first .bar{
+      top: 20px;
+    }
+    .has-point.end {
+      .bar{
+        bottom: 60px;
+      }
+      .bar.can-cancel{
+        bottom: 90px;
+      }
+    }
+  }
+  .list-ios .item-block .item-inner{
+    border-bottom: 1px dashed #D2D2D2;
+  }
+}

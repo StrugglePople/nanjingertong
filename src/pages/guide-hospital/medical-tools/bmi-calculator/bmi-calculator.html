@@ -1,0 +1,40 @@
+<!--
+  Generated template for the BmiCalculator page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>BMI计算器</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="navCtrl.popToRoot()">
+        <ion-icon name="ios-home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content bg-color-1>
+
+  <p title-color-1 size-small-2 padding bg-color-light style="border-bottom: 1px solid #EDEDED">
+    BMI = 体重kg ÷ 身高㎡。是世界卫生组织认定的胖瘦判断以及是否健康的标准，适用于成年男女。
+  </p>
+
+  <!--<div style="padding-left: 10px;" title-color-3 size-small-2>填写基本信息</div>-->
+
+  <ion-list>
+    <ion-item class="top-bot">
+      <ion-label stacked>身高(cm)</ion-label>
+      <ion-input type="text" [(ngModel)]="height" placeholder="请输入" clearInput></ion-input>
+    </ion-item>
+    <ion-item class="top-bot">
+      <ion-label stacked>体重(kg)</ion-label>
+      <ion-input type="text" [(ngModel)]="weight" placeholder="请输入" clearInput></ion-input>
+    </ion-item>
+  </ion-list>
+  <module-separate [num]="2"></module-separate>
+
+  <button ion-button full round button-theme zk-button-full (click)="searchResult()">查看结果</button>
+</ion-content>

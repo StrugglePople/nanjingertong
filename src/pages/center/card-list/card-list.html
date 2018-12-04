@@ -1,0 +1,73 @@
+<!--
+  Generated template for the CardListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{cardType}}列表</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="pushView('MemberListPage')">
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content bg-color-1>
+  <ion-list *ngIf="cardType != '住院号'">
+    <div *ngFor="let member of members" class="one-person">
+      <ion-item *ngIf="member.cards && member.cards.length > 0">
+        <ion-row>
+          <ion-col title-color-4>{{member.name}}</ion-col>
+          <ion-col text-right title-color-1>{{member.mobileNo}}</ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item class="card-item" *ngFor="let card of member.cards" (click)="chooseCard(card)" tappable>
+        <div class="icon default" [ngClass]="{
+                    'zifei': card.medicalCardType == '院内卡' || card.medicalCardType == '其他' || card.medicalCardType == '南京市C卡',
+                    'shebao': card.medicalCardType == '社保卡' || card.medicalCardType == '医保卡' || card.medicalCardType == '住院号',
+                    'idCard': card.medicalCardType == '身份证'
+                    }">
+          <div text-center title-color-light>{{card.medicalCardType}}</div>
+        </div>
+        <div class="name">{{card.name}}</div>
+        <div class="card-no">{{card.medicalCardNo}}</div>
+        <i class="icon-arrow"></i>
+      </ion-item>
+    </div>
+  </ion-list>
+  <ion-list *ngIf="cardType == '住院号'">
+    <div *ngFor="let member of members" class="one-person">
+      <ion-item *ngIf="member.zhuYuan && member.zhuYuan.length > 0">
+        <ion-row>
+          <ion-col title-color-4>{{member.name}}</ion-col>
+          <ion-col text-right title-color-1>{{member.mobileNo}}</ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item class="card-item" *ngFor="let zhuYuan of member.zhuYuan" (click)="chooseCard(zhuYuan)" tappable>
+        <div class="icon default" [ngClass]="{
+                    'zifei': zhuYuan.medicalCardType == '院内卡' || zhuYuan.medicalCardType == '其他' || zhuYuan.medicalCardType == '南京市C卡',
+                    'shebao': zhuYuan.medicalCardType == '社保卡' || zhuYuan.medicalCardType == '医保卡' || zhuYuan.medicalCardType == '住院号',
+                    'idCard': zhuYuan.medicalCardType == '身份证'
+                    }">
+          <div text-center title-color-light>{{zhuYuan.medicalCardType}}</div>
+        </div>
+        <div class="name">{{zhuYuan.name}}</div>
+        <div class="card-no">{{zhuYuan.medicalCardNo}}</div>
+        <i class="icon-arrow"></i>
+      </ion-item>
+    </div>
+  </ion-list>
+  <div *ngIf="!members || !members.length > 0 || cardType != '住院号'? !session.cards.length>0 : !session.zhuYuan.length>0" ion-item class="button-2" tappable (click)="pushView('MemberListPage', {'needLogin': true})">
+    <div class="title">持卡人管理</div>
+    <div class="detail-title title-color-2">
+    </div>
+    <div class="icon-arrow"></div>
+  </div>
+  <module-separate [num]="5"></module-separate>
+  <empty-view text="没有{{cardType}}" *ngIf="!members || !members.length > 0 || cardType != '住院号'? !session.cards.length>0 : !session.zhuYuan.length>0" [excessHeight]="44"></empty-view>
+</ion-content>

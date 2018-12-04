@@ -1,0 +1,56 @@
+page-add-card {
+  .label-ios + ion-input .text-input, .label-ios + ion-textarea .text-input, .label-ios + .input + .cloned-input {
+    margin-left: 0;
+  }
+  .select.select-card{
+    padding: 0;
+  }
+  .select.select-card .select-icon-inner{
+    display: none;
+  }
+  .attention-info {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    .content {
+      margin: 6px 12px;
+      //min-height: 72px;
+      font-size: 12px;
+      color: #999999;
+      line-height: 24px;
+      span {
+        color: red;
+      }
+    }
+  }
+  .card-info-img {
+    padding: 0 10px;
+    p {
+      color: #E93511;
+    }
+    .card-img {
+      position: relative;
+      height: 150px;
+      width: 225px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .card-1 .card-img {
+    background: url("../assets/image/center/medicalCard-1.png") no-repeat;
+    background-size: 100%;
+  }
+  .card-2 .card-img {
+    background: url("../assets/image/center/medicalCard-2.png") no-repeat;
+    background-size: 100%;
+  }
+  .card-3 .card-img {
+    background: url("../assets/image/center/medicalCard-3.png") no-repeat;
+    background-size: 100%;
+  }
+  .default-fist{
+    position: absolute;
+    top: 5px;
+    left: 0;
+  }
+}

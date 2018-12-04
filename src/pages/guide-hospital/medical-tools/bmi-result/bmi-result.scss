@@ -1,0 +1,28 @@
+page-bmi-result {
+  .bmi-img-result-wrapper {
+    height: pxTorem(90px);
+    width: pxTorem(316px);
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .bmi-img-result-wrapper .point {
+    background: url("../assets/image/guide-hospital/knowledge-repository/bmi_result_position.png") no-repeat;
+    background-size: pxTorem(16px) pxTorem(20px);
+    width: pxTorem(16px);
+    height: pxTorem(20px);
+    position: absolute;
+    top:0;
+    left: 0;
+    transition: left 1s;
+  }
+  .bmi-img-result-wrapper .img-result-bar {
+    background: url("../assets/image/guide-hospital/knowledge-repository/bmi_result_bar.png") no-repeat;
+    background-size: pxTorem(300px) pxTorem(51px);
+    width: pxTorem(300px);
+    height: pxTorem(51px);
+    position: absolute;
+    top: pxTorem(20px);
+    left: pxTorem(8px);
+  }
+}

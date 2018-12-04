@@ -1,0 +1,24 @@
+.security-code {
+  letter-spacing: 0;
+  font-size: 15px !important;
+  background-color: #fff;
+  top: 50% !important;
+  margin-top: -8px;
+  right: 15px !important;
+  border: 0;
+  border-left: 1px solid $primary-color;
+  border-radius: 0;
+  min-height: 16px !important;
+  height: 16px;
+  line-height: 16px !important;
+  padding-left: 18px;
+  padding-right: 0;
+}
+.security-code.activated {
+  background-color: #fff;
+  border-left: 1px solid #00E7C2;
+}
+.security-code.disabled {
+  color: #b1b1b1;
+  border-left: 1px solid #b1b1b1;
+}

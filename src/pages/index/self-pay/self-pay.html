@@ -1,0 +1,122 @@
+<!--
+  Generated template for the SelfPayPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>门诊缴费</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content bg-color-1>
+  <ion-item detail-push tappable class="border-none select-person-page" (click)="pushMemberSelectView()" style="margin-bottom: 10px;">
+    {{member.name?member.name:'选择持卡人'}} <span *ngIf="member && member.id">{{member.sex == 'FEMALE'?'女':'男'}}&nbsp; | &nbsp;{{member.mobileNo}}</span>
+  </ion-item>
+  <ion-refresher (ionRefresh)="DownRefresh(true, $event)" *ngIf="member && member.id > 0">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <!--<module-separate></module-separate>-->
+
+  <ion-row class="self-pay">
+    <ion-col class="pay" [ngClass]="{'select':checked == 'billing'}" (click)="loadData(true,true)">未缴费</ion-col>
+    <ion-col class="pay" [ngClass]="{'select':checked == 'billed'}" (click)="loadData0(true,true)">已缴费</ion-col>
+  </ion-row>
+  <div *ngIf="items.length > 0 && checked == 'billing'">
+    <div *ngFor="let item of items" (click)="pushView('SelfPayDetailPage', {data: item})">
+      <!--<ion-row title-color-1 bg-color-light top-line>
+        <ion-col>
+          <ion-item no-lines>
+            <ion-label>{{item.billType}}</ion-label>
+            <ion-checkbox [(ngModel)]="item.checked" (ionChange)="changeChecked(item)"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+        <ion-col text-right size-middle style="line-height: 4.4rem;padding-right: 1.5rem">
+          自费<span title-color-5>￥{{(item.totalFee - item.totalMedicalFee).toFixed(2)}}</span>
+        </ion-col>
+      </ion-row>-->
+      <ion-list>
+        <ion-item title-color-4 size-small-1 style="line-height: 24px">
+          <ion-row>
+            <ion-col>缴费单号</ion-col>
+            <ion-col text-right>{{item.paymentNO}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>总费用</ion-col>
+            <ion-col text-right>￥{{item.totalFee}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>开单时间</ion-col>
+            <ion-col text-right>{{item.billDate}}</ion-col>
+          </ion-row>
+        </ion-item>
+        <ion-item size-small-1 text-right style="color: #ffc714">
+          {{item.statusStr}}
+        </ion-item>
+      </ion-list>
+      <module-separate></module-separate>
+    </div>
+  </div>
+  <div *ngIf="items.length > 0 && checked == 'billed'">
+    <div *ngFor="let tItem of items">
+      <ion-item-divider color="light">
+        <div class="record-divider">{{tItem.monthName}}</div>
+      </ion-item-divider>
+      <div *ngFor="let item of tItem.billList" (click)="pushView('SelfPayDetailPage', {data: item})">
+        <ion-row title-color-1 bg-color-light top-line>
+          <ion-col>
+            <ion-label size-middle style="padding-left: 1.5rem">{{item.billType}}</ion-label>
+          </ion-col>
+          <ion-col text-right size-middle style="line-height: 4.4rem;padding-right: 1.5rem">
+            自费<span title-color-5>￥{{(item.totalFee - item.totalMedicalFee).toFixed(2)}}</span>
+          </ion-col>
+        </ion-row>
+        <ion-list>
+          <ion-item title-color-4 size-small-1 style="line-height: 24px">
+            <ion-row>
+              <ion-col>缴费单号</ion-col>
+              <ion-col text-right>{{item.paymentNO}}</ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>总费用</ion-col>
+              <ion-col text-right>￥{{item.totalFee}}</ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>开单时间</ion-col>
+              <ion-col text-right>{{item.billDate}}</ion-col>
+            </ion-row>
+          </ion-item>
+          <ion-item size-small-1 text-right style="color: #ffc714">
+            {{item.statusStr}}
+          </ion-item>
+        </ion-list>
+        <module-separate></module-separate>
+      </div>
+    </div>
+    <div (click)="loadMoreData()" *ngIf="hasMore" title-color-2 size-small-2 text-center style="line-height: 40px">
+      更多历史
+    </div>
+  </div>
+  <empty-view *ngIf="items.length <=0" text="暂无记录" [excessHeight]="80"></empty-view>
+</ion-content>
+
+<!--<ion-footer top-line>
+  <ion-row bg-color-light>
+    <ion-col col-4>
+      <ion-item no-lines>
+        <ion-label>全选</ion-label>
+        <ion-checkbox [(ngModel)]="allChecked" (ionChange)="changeAllChecked()"></ion-checkbox>
+      </ion-item>
+    </ion-col>
+    <ion-col col-5 title-color-1 text-center style="line-height: 63px;">
+        合计 <span title-color-5>{{money}}</span>
+    </ion-col>
+    <ion-col col-3 text-center size-big-1 title-color-light style="background-color: #ffc714;line-height: 63px;" (click)="pay()">
+      支付
+    </ion-col>
+  </ion-row>
+</ion-footer>-->

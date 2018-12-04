@@ -1,0 +1,42 @@
+page-appointment-record-detail {
+  .back-img{
+    height: 195px;
+    text-align: center;
+    padding: 20px;
+    background: url("../assets/image/record/appoint-record-bg.png") no-repeat 0 0;
+    background-size: 100% auto;
+    color: #ffffff;
+    h4{
+      padding-bottom: 10px;
+      margin: 0 auto;
+      //width: 120px;
+      //background: url(../assets/image/record/pay-success.png) no-repeat 0 7px;
+      //background-size: 27px auto;
+    }
+  }
+  .appoint-body{
+    margin: 10px;
+    margin-top: -80px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.10);
+    border-radius: 10px;
+    font-size: 16px;
+    width: auto;
+    overflow: hidden;
+    .item-block{
+      height: 30px;
+    }
+    .item-block .item-inner{
+      border:none;
+    }
+    .fist-item ion-row{
+      padding-left: 0;
+    }
+    .fist-item.item-block .item-inner{
+      border-bottom: 1px dashed #D2D2D2;
+    }
+    ion-row{
+      padding: 0 15px;
+    }
+  }
+}

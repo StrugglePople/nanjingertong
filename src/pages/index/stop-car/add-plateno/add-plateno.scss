@@ -1,0 +1,50 @@
+page-add-plateno {
+  .parkingbind{
+    .title {
+      text-align: center;
+      margin:20px 0;
+      font-weight: bold;
+      font-size:18px;
+    }
+    .province{
+      position: absolute;
+      font-weight: bold;
+      font-size:18px;
+      z-index: 999;
+      left: 22px;
+      line-height: 60px;
+    }
+    .parking-area {
+      height:60px;
+      border:1px solid #ccc;
+      line-height:60px;
+      text-indent: 2em;
+      font-weight: bold;
+      font-size:18px;
+      .item-inner{
+        border-bottom: none;
+      }
+      ion-input .text-input{
+        margin-left: 20px;
+        letter-spacing:10px;
+      }
+    }
+    .confirm {
+      margin: 20px 0;
+      width: 50%;
+      height: 20px;
+      margin-left: 50%;
+      background: url("../assets/image/index/confirm1.png") no-repeat;
+      background-size: 20px 20px;
+      text-indent: 30px;
+      line-height: 20px;
+    }
+    .confirm.lat {
+      background: url("../assets/image/index/confirm2.png") no-repeat;
+      background-size: 20px 20px;
+    }
+  }
+  .add-plateno{
+    background-image: linear-gradient(90deg, #878FFF 0%, #6053E2 100%);
+  }
+}

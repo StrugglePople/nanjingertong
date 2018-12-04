@@ -1,0 +1,18 @@
+page-diagnose-disease-detail {
+  .title-flag {
+    font-size: pxTorem(15px);
+    min-height: pxTorem(30px);
+    position: relative;
+    padding-left:pxTorem(13px);
+  }
+  .title-flag .flag {
+    background: url("../assets/image/common/title-flag.png") no-repeat;
+    background-size: pxTorem(5px) pxTorem(16px);
+    width: pxTorem(5px);
+    height: pxTorem(16px);
+    position: absolute;
+    top: 50%;
+    margin-top: pxTorem(-8px);
+    left: 0;
+  }
+}

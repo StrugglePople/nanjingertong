@@ -1,0 +1,64 @@
+<!--
+  Generated template for the ClinicInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>预约挂号</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="navCtrl.popToRoot()">
+        <ion-icon name="ios-home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content bg-color-1>
+  <div class="clinic-info-top" bg-color-light bottom-line  tappable (click)="pushView('CardListPage',{'cardType' : '就诊卡'})">
+    <div class="title" size-middle title-color-1>{{member.name}} {{member.mobileNo}}</div>
+    <div class="detail-title" size-small-1 title-color-2 *ngIf="card.medicalCardNo" [ngSwitch]="card.medicalCardType">
+      <span *ngSwitchCase="'其他'">院内卡</span>
+      <span *ngSwitchDefault>{{card.medicalCardType}}</span>
+      : {{card.medicalCardNo}}</div>
+    <div class="remind" size-middle title-color-2 *ngIf="!card.medicalCardNo">请选择就诊卡</div>
+    <i class="icon-arrow"></i>
+  </div>
+
+  <div class="clinic-body">
+    <ion-item class="fist-item">
+      <ion-row>
+        <ion-col title-color-8 size-middle style="height: 30px;">{{clinicStr}}费用</ion-col>
+        <ion-col text-right title-color-9 size-big-4 style="height: 30px;">{{schedule.price}}</ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-row>
+      <ion-col title-color-4>医院</ion-col>
+      <ion-col text-right title-color-1>{{hospitalName}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col title-color-4>科室</ion-col>
+      <ion-col text-right title-color-1>{{dept.name}}</ion-col>
+    </ion-row>
+    <ion-row *ngIf="expert">
+      <ion-col title-color-4>医生</ion-col>
+      <ion-col text-right title-color-1>{{expert.name}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col title-color-4>就诊日期</ion-col>
+      <ion-col text-right title-color-1>
+        {{schedule.regDate}}
+        <span>{{schedulesTime[schedule.regTime]}}</span>
+        <!--<span *ngSwitchCase="'AFTERNOON'">下午</span>-->
+        <!--<span *ngSwitchDefault>全天</span>-->
+      </ion-col>
+    </ion-row>
+  </div>
+  <module-separate></module-separate>
+
+  <button ion-button full round zk-button-full button-theme (click)="commitClinic()">确认{{clinicStr}}</button>
+</ion-content>

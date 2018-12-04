@@ -1,0 +1,30 @@
+page-outpatient-pay {
+  .pay-list{
+    color: #111111;
+    .left-icon{
+      float: left;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      background: #EC6386;
+      border-radius: 50%;
+      font-size: 14px;
+    }
+    ion-row{
+      padding-left: 5px;
+      .type{
+        font-size: 16px;
+        padding-bottom: 5px;
+      }
+      .date{
+        font-size: 14px;
+        color: #A5A5A5;
+      }
+      .price{
+        font-size: 18px;
+        line-height: 42px;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,138 @@
+<!--
+  Generated template for the AppointmentRecordDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{clinicStr}}记录详情</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="navCtrl.popToRoot()">
+        <ion-icon name="ios-home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="back-img">
+    <h4>
+      <div [ngSwitch]="data.status">
+        <span *ngSwitchCase="'PASS'">挂号成功</span>
+        <span *ngSwitchCase="'UNPASS'">预约失败</span>
+        <span *ngSwitchCase="'CANCELLED'">已撤销</span>
+        <span *ngSwitchCase="'RETURNED'">未通过</span>
+        <span *ngSwitchCase="'APPOINTTING'">预约成功待确认挂号</span>
+        <span *ngSwitchCase="'EXPIRED'">已过期</span>
+      </div>
+    </h4>
+    <p text-left>预约成功后，请在预约候诊时段内携就诊卡至候诊区报到机取序号候诊。</p>
+
+  </div>
+  <div class="appoint-body">
+    <ion-item class="fist-item">
+      <ion-grid no-padding>
+        <ion-row>
+          <ion-col title-color-4>{{clinicStr}}时间</ion-col>
+          <ion-col text-right>{{data.createTime}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <ion-row *ngIf="data.clinicName">
+      <ion-col title-color-4>{{clinicStr}}编号</ion-col>
+      <ion-col text-right>{{data.clinicName}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col title-color-4>{{clinicStr}}人</ion-col>
+      <ion-col text-right>{{data.name}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col title-color-4>就诊卡号</ion-col>
+      <ion-col text-right>{{data.medicalCardNo}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col title-color-4 col-4>科室</ion-col>
+      <ion-col text-right col-8>{{data.dept || data.deptName}}</ion-col>
+    </ion-row>
+    <ion-row *ngIf="data.expertName">
+      <ion-col title-color-4>专家姓名</ion-col>
+      <ion-col text-right>{{data.expertName}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col title-color-4>就诊日期</ion-col>
+      <ion-col text-right>{{data.regDate}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col title-color-4>候诊时间</ion-col>
+      <ion-col text-right [ngSwitch]="data.regTime">
+        <span *ngSwitchCase="'E_MORNING'">凌晨</span>
+        <span *ngSwitchCase="'MORNING'">上午</span>
+        <span *ngSwitchCase="'NOON'">中午</span>
+        <span *ngSwitchCase="'AFTERNOON'">下午</span>
+        <span *ngSwitchCase="'EVENING'">夜间</span>
+        <span *ngSwitchCase="'ALLDAY'">全天</span>
+        <span *ngSwitchCase="'DAY'">白天</span>
+        {{data.visitTime}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col title-color-4>就诊地点</ion-col>
+      <ion-col text-right title-color-5>{{data.position}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col title-color-4>费用信息</ion-col>
+      <ion-col text-right title-color-5>￥ {{data.price}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col title-color-4>交易流水</ion-col>
+      <ion-col text-right title-color-5>{{clinicStr=='预约'?data.hisTradeId.split('_')[1]:data.hisTradeId}}</ion-col>
+    </ion-row>
+    <!--<ion-row>
+      <ion-col title-color-4>取号时间</ion-col>
+      <ion-col text-right title-color-5>{{atartTime | date: 'HH:mm'}}-{{showTime | date: 'HH:mm'}}</ion-col>
+    </ion-row>-->
+    <ion-row>
+      <ion-col title-color-4>{{clinicStr}}状态</ion-col>
+      <ion-col text-right title-color-5>
+        <div text-right>  <!--[ngSwitch]="data.status"-->
+          <span>{{data.recordStatus}}</span>
+          <!--<span *ngSwitchCase="'PASS'">挂号成功</span>
+          <span *ngSwitchCase="'UNPASS'">预约失败</span>
+          <span *ngSwitchCase="'CANCELLED'">已撤销</span>
+          <span *ngSwitchCase="'RETURNED'">未通过</span>
+          <span *ngSwitchCase="'APPOINTTING'">预约成功待确认挂号</span>
+          <span *ngSwitchCase="'EXPIRED'">已过期</span>-->
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+  <module-separate></module-separate>
+  <!--<div style="text-align: center">-->
+    <!--<canvas id="canvas"></canvas>-->
+  <!--</div>-->
+  <!--<button ion-button full round zk-button-full button-theme (click)="showMap()" *ngIf="!data.status">-->
+    <!--<i class="nav"></i>-->
+  <!--</button>-->
+  <ion-grid *ngIf="data.status">
+    <ion-row>
+      <ion-col *ngIf="data.canConfirm && data.status === 'APPOINTTING'">
+        <button nanjing-button ion-button full round zk-button-full (click)="confirm()">
+          确认支付
+        </button>
+      </ion-col>
+      <ion-col *ngIf="clinicStr == '预约' && data.status === 'PASS' && data.canDelete === 0">
+        <button nanjing-button ion-button full round zk-button-full color="danger" (click)="cancelYuyue()">
+          取消预约
+        </button>
+      </ion-col>
+      <!--<ion-col *ngIf="data.canDelete === 1">
+        <button ion-button zk-button-full color="danger" (click)="deleteRecord()">
+          删除记录
+        </button>
+      </ion-col>-->
+    </ion-row>
+  </ion-grid>
+</ion-content>

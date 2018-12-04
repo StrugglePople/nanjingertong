@@ -1,0 +1,121 @@
+page-diagnose-index {
+  .segment-ios-green .segment-button {
+    background-color:#fff
+  }
+  .cross-bg {
+    background: url("../assets/image/guide-hospital/auto-diagnose/diagnose-bg.png");
+    background-size: pxTorem(21.5px);
+  }
+
+  .diagnose-fun-view .icon {
+    position: absolute;
+    width: pxTorem(40px);
+    height: pxTorem(40px);
+    background-size: pxTorem(40px) !important;
+    left: pxTorem(20px);
+  }
+  .diagnose-fun-view .icon.man {
+    background: url("../assets/image/guide-hospital/auto-diagnose/man-icon.png") no-repeat;
+    bottom: pxTorem(274px);
+  }
+  .diagnose-fun-view .icon.woman {
+    background: url("../assets/image/guide-hospital/auto-diagnose/woman-icon.png") no-repeat;
+    bottom: pxTorem(200px);
+  }
+  .diagnose-fun-view .icon.age-select {
+    background: url("../assets/image/guide-hospital/auto-diagnose/diagnose-age-select.png") no-repeat;
+    bottom: pxTorem(130px);
+  }
+
+  .diagnose-fun-view .toggleWrapper {
+    position: absolute;
+    width: pxTorem(70px);
+    height: pxTorem(30px);
+    bottom: pxTorem(80px);
+    right: pxTorem(20px);
+  }
+  .diagnose-body-wrapper {
+    width: 100%;
+    height: 100%;
+    display: list-item;
+  }
+
+  .diagnose-body-adult {
+    width: pxTorem(185px);
+    height: pxTorem(430px);
+    background-size: pxTorem(185px) pxTorem(430px) !important;
+    position: absolute;
+    left: 50%;margin-left: pxTorem(-92px);
+    top: 50%; margin-top: pxTorem(-215px);
+  }
+  .diagnose-body-adult.man.front {
+    background: url("../assets/image/guide-hospital/auto-diagnose/adult-man-front.png") no-repeat;
+  }
+  .diagnose-body-adult.man.back {
+    background: url("../assets/image/guide-hospital/auto-diagnose/adult-man-back.png") no-repeat;
+  }
+  .diagnose-body-adult.woman.front {
+    background: url("../assets/image/guide-hospital/auto-diagnose/aduit-woman-front.png") no-repeat;
+  }
+  .diagnose-body-adult.woman.back {
+    background: url("../assets/image/guide-hospital/auto-diagnose/aduit-woman-back.png") no-repeat;
+  }
+  .diagnose-body-child {
+    width: pxTorem(210px);
+    height: pxTorem(387px);
+    margin: 0 auto;
+    background-size: pxTorem(210px) pxTorem(387px) !important;
+    position: absolute;
+    left: 50%;margin-left: pxTorem(-105px);
+    top: 50%; margin-top: pxTorem(-194px);
+  }
+  .diagnose-body-child.man.front {
+    background: url("../assets/image/guide-hospital/auto-diagnose/child-man-front.png") no-repeat;
+  }
+  .diagnose-body-child.man.back {
+    background: url("../assets/image/guide-hospital/auto-diagnose/child-man-back.png") no-repeat;
+  }
+  .diagnose-body-child.woman.front {
+    background: url("../assets/image/guide-hospital/auto-diagnose/child-woman-front.png") no-repeat;
+  }
+  .diagnose-body-child.woman.back {
+    background: url("../assets/image/guide-hospital/auto-diagnose/child-woman-back.png") no-repeat;
+  }
+
+  .ui-body-point-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  .ui-body-point-wrapper .point{
+    position: absolute;
+    width: pxTorem(16px);
+    height: pxTorem(16px);
+    border-radius: pxTorem(16px);
+    background-color: red;
+    top: 50%;
+    margin-top: pxTorem(-8px);
+    left: 50%;
+    margin-left: pxTorem(-8px);
+  }
+  .toggle-inner {
+    line-height: pxTorem(28px);
+    text-align: center;
+    color: #007aff;
+  }
+}
+
+.diagnose-part-header {
+  padding: pxTorem(10px) pxTorem(15px);
+}
+.diagnose-part-header .title {
+  background: url("../assets/image/common/title-flag.png") no-repeat;
+  background-size: pxTorem(5px) pxTorem(15px);
+  background-position: 0px pxTorem(1px);
+  padding-left: pxTorem(15px);
+  line-height: pxTorem(18px);
+}
+.diagnose-part-header .detail-title {
+  padding-top: pxTorem(5px);
+  line-height: pxTorem(14px);
+}

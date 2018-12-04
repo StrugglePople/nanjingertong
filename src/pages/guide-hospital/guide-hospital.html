@@ -1,0 +1,84 @@
+<!--
+  Generated template for the GuideHospital page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>我的医院</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="top-img" *ngIf="imgUrlPrefix">
+    <img [src]="imgUrlPrefix">
+  </div>
+
+
+
+  <div class="introduce">
+    <div class="title title-4">
+      信息公告
+      <div class="more" tappable (click)="pushView('HealthInformationPage',{type: 'ANNOUNCEMENT', title: '信息公告'})">更多 &nbsp;<ion-icon name="arrow-forward"></ion-icon></div>
+    </div>
+    <ion-list class="health-info">
+      <ion-item tappable detail-push  *ngFor="let news of newsList" (click)="pushView('HealthInformationDetailPage', {newsId:news['newsId'],title:'信息公告'})">
+        <ion-row>
+          <ion-col col-8 text-left>{{news.title}}</ion-col>
+          <ion-col col-4 text-right size-small-3 title-color-2>{{news.publishTime | date:"yyyy-MM-dd"}}</ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="introduce">
+    <div class="title title-1">
+      健康资讯
+      <div class="more" tappable (click)="pushView('HealthInformationPage',{type: 'HEALTH', title: '健康资讯'})">更多 &nbsp;<ion-icon name="arrow-forward"></ion-icon></div><!--HospitalNews-->
+    </div>
+    <ion-list class="health-info">
+      <ion-item tappable detail-push  *ngFor="let news of HosNewsList" (click)="pushView('HealthInformationDetailPage', {newsId:news['newsId'],title:'健康资讯'})">
+        <ion-row>
+          <ion-col col-8 text-left>{{news.title}}</ion-col>
+          <ion-col col-4 text-right size-small-3 title-color-2>{{news.publishTime | date:"yyyy-MM-dd"}}</ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+  </div>
+  <ion-row class="hospital-guide">
+    <ion-col tappable class="left" (click)="pushView('HospitalIntroductionPage')">
+    </ion-col>
+    <ion-col tappable class="right" (click)="pushView('HealthInformationPage',{type: 'INSTRUCTIONS', title: '就医指南'})">
+    </ion-col>
+  </ion-row>
+
+
+  <!--<div class="introduce">
+    <div class="title title-2">
+      科室介绍
+      <div class="more" tappable (click)="showDeptList('dept',true,true)">更多 &nbsp;<ion-icon name="arrow-forward"></ion-icon></div>
+    </div>
+    <ul class="depts clearfix health-info">
+      <li *ngFor="let dept of depts" tappable (click)="clickDept(dept)">{{dept.name}}</li>
+
+    </ul>
+  </div>-->
+  <!--<div class="introduce">
+    <div class="title title-3">
+      专家介绍
+      <div class="more" tappable (click)="showDeptList('expert',true)">更多 ></div>
+    </div>
+    <ul class="expert-new clearfix">
+      <li *ngFor="let expert of experts" (click)="clickExpert(expert)" tappable>
+        <div class="header">
+          <img [src]="expert.picName || doctorDefail"/>
+        </div>
+        <div>{{expert.name}}</div>
+        <p>{{expert.underDepts?expert.underDepts[0].name:''}}</p>
+      </li>
+
+    </ul>
+  </div>-->
+
+
+</ion-content>

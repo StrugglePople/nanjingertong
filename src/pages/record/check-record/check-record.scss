@@ -1,0 +1,46 @@
+page-check-record,page-inspect-record{
+  .datetime-ios {
+    padding-top: 8px;
+  }
+  .check-inspect-list{
+    margin-top: 10px;
+    border-bottom: 1px solid #EDEDED;
+    .record-divider{
+      font-size: 14px;
+      color: #A5A5A5;
+    }
+  }
+  .record-cell{
+    height: 70px;
+    padding-left: 15px;
+    line-height: 28px;
+    .new-first{
+      font-size: 16px;
+      color: #111111;
+    }
+    .new-second{
+      font-size: 14px;
+      color: #888888;
+    }
+    .ui-read{
+      margin-left: 15px;
+      margin-top: 8px;
+      width: 8px;
+      height: 8px;
+      background-color: red;
+      border-radius: 8px;
+      float: right;
+    }
+  }
+}
+
+.bottom-information{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+  color: #888888;
+  font-size: 14px;
+  text-align: center;
+}

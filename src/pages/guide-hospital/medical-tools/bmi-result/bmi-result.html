@@ -1,0 +1,36 @@
+<!--
+  Generated template for the BmiResult page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>BMI结果</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="navCtrl.popToRoot()">
+        <ion-icon name="ios-home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content bg-color-1>
+
+  <p title-color-1 size-small-2>BMI = 体重kg ÷ 身高㎡。是世界卫生组织认定的胖瘦判断以及是否健康的标准，适用于成年男女。</p>
+
+  <p>
+    <span size-big-2 style="color:#c6a494">您的BMI是:</span>
+    <span style="color: #f5726d" size-middle>{{result.bmiResult}}</span>
+    <span title-color-2 size-small-2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;体型:{{result.sort}}</span>
+  </p>
+  <div text-center title-color-2 size-small-2>（身高：{{result.height}} cm 体重：{{result.weight}} kg）</div>
+  <module-separate></module-separate>
+
+  <div class="bmi-img-result-wrapper">
+    <div class="point" #point></div>
+    <div class="img-result-bar"></div>
+  </div>
+
+  <p size-small-2 title-color-1>{{result.tip}}</p>
+</ion-content>

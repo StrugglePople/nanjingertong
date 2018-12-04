@@ -1,0 +1,81 @@
+page-pregnant-self-test {
+  .css3-h-box {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    box-orient: horizontal;
+    -webkit-box-align: center;
+    box-align: center;
+    -webkit-box-pack: center;
+    box-pack: center;
+  }
+  .self-test-top {
+    position: relative;
+    background: url('../assets/image/guide-hospital/pregnant/selfTestTopBg.png') no-repeat;
+    background-size: 100% pxTorem(175px);
+    height: pxTorem(175px);
+  }
+  .self-test-top .top-info{
+    padding: pxTorem(19px) 0 pxTorem(21px) pxTorem(15px);
+    font-size: pxTorem(15px);
+    color: #ffffff;
+  }
+  .self-test-top .top-icon{
+    position: absolute;
+    height: pxTorem(44px);
+    width: pxTorem(44px);
+    top: pxTorem(5px);
+    right: pxTorem(16px);
+    background: url("../assets/image/guide-hospital/pregnant/help.png") no-repeat;
+    background-size: pxTorem(22px) pxTorem(22px);
+    background-position: 50%;
+  }
+  .self-test-top .top-date{
+    position: relative;
+    height: pxTorem(44px);
+    position: relative;
+    margin: 0 pxTorem(20px);
+  }
+  .top-date .data-item{
+    position: relative;
+    height: 100%;
+  }
+  .data-item.num{
+    background-size: 100% 100% !important;
+    color: #7c4141;
+    line-height: pxTorem(44px);
+    text-align: center;
+    min-width: pxTorem(40px);
+    font-size: pxTorem(18px);
+  }
+  .data-item.num.left{
+    background: url("../assets/image/guide-hospital/pregnant/calendar-left.png") no-repeat;
+  }
+  .data-item.num.right{
+    background: url("../assets/image/guide-hospital/pregnant/calendar-right.png") no-repeat;
+  }
+  .data-item.unit{
+    line-height: pxTorem(55px);
+    width: pxTorem(30px);
+  }
+  .self-test-top .top-btn{
+    text-align: center;
+    font-size: pxTorem(16px);
+    color: #ffffff;
+    margin: pxTorem(18px) pxTorem(39px) pxTorem(16px) pxTorem(42px);
+    background-color: #f27c8d;
+    border: pxTorem(2px) solid #d46378;
+    height: pxTorem(41px);
+    line-height: pxTorem(41px);
+    border-radius: pxTorem(4px);
+  }
+  .pregnant-week-img{
+    height: auto;
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  .depart-introduce-text {
+    padding: pxTorem(5px) pxTorem(10px);
+  }
+}

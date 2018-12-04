@@ -1,0 +1,44 @@
+<!--
+  Generated template for the AppointmentRecord page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{priceDetail.name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content bg-color-1>
+  <!--<div class="price-title">
+    <div class="icon"></div>
+    <div class="title">{{priceDetail.name}}</div>
+  </div>-->
+  <div class="price-list">
+    <ion-row class="price-item">
+      <ion-col col-5 class="title">除外内容</ion-col>
+      <ion-col col-7 class="content">{{priceDetail.description || '暂无'}}</ion-col>
+    </ion-row>
+    <ion-row class="price-item">
+      <ion-col col-5 class="title">计价单位</ion-col>
+      <ion-col col-7 class="content">{{priceDetail.unit || '暂无'}}</ion-col>
+    </ion-row>
+    <ion-row class="price-item">
+      <ion-col col-5 class="title">价格</ion-col>
+      <ion-col col-7 class="content">￥{{priceDetail.price || '暂无'}}</ion-col>
+    </ion-row>
+    <ion-row class="price-item">
+      <ion-col col-5 class="title">南京市医保自付比例</ion-col>
+      <ion-col col-7 class="content">{{priceDetail.payRatio || '暂无'}}</ion-col>
+    </ion-row>
+    <ion-row class="price-item">
+      <ion-col col-5 class="title">批准文号</ion-col>
+      <ion-col col-7 class="content">{{priceDetail.approvalNumber || '暂无'}}</ion-col>
+    </ion-row>
+  </div>
+
+</ion-content>

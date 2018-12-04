@@ -1,0 +1,56 @@
+<!--
+  Generated template for the HealthInformation page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="navCtrl.popToRoot()">
+        <ion-icon name="ios-home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content bg-color-1>
+  <!--<ion-scroll scrollX="true" scrollY="false">
+    <ion-grid no-padding #grid>
+      <ion-row>
+        <ion-col *ngFor="let item of items; let i = index" class="zk-tab-col news-col" [class.title-color-1]="option.index != i"
+                 [class.title-color-3]="option.index == i" tappable (click)="selectTab(i)">
+          {{item.name}}
+          <div class="flag" bg-color-main *ngIf="option.index == i"></div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-scroll>-->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list *ngIf="type != 'POLICY'">
+    <ion-item *ngFor="let news of newsList" class="zixun-item" tappable (click)="pushView('HealthInformationDetailPage', {newsId:news['newsId'],title:title})">
+      <img [src]="imgUrlPrefix + news.picURL" class="zixun-image">
+      <div class="title" title-color-1>{{news.title}}</div>
+      <!--<div class="detail-title">{{news.subtitle}}</div>-->
+      <div class="mark" title-color-2>{{news.publishTime | date:"yyyy-MM-dd"}}</div>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="type == 'POLICY'">
+    <ion-item detail-push *ngFor="let news of newsList" tappable (click)="pushView('HealthInformationDetailPage', {newsId:news['newsId'],title:title})">
+      <ion-row>
+        <ion-col col-8 text-left text-over>{{news.title}}</ion-col>
+        <ion-col col-4 text-right size-small-3 title-color-2 style="line-height: 21px;">{{news.publishTime | date:"yyyy-MM-dd"}}</ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="loadMoreData($event)" *ngIf="option.hasMore">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <empty-view *ngIf="!newsList.length > 0" [text]="'暂无内容'"></empty-view>
+</ion-content>

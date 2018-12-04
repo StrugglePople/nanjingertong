@@ -1,0 +1,33 @@
+page-license-management {
+  ion-item .item-inner{
+    height: 70px;
+    padding-left: 46px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #333;
+    background:url("../assets/image/index/car.png") no-repeat 0 center;
+    background-size: 36px 36px;
+  }
+  ion-footer{
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: center;
+    background-image: linear-gradient(90deg, #878FFF 0%, #6053E2 100%);
+    .btn {
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      border-radius: 90%;
+      border: 2px solid #fff;
+      line-height: 22px;
+      font-weight: bold;
+      font-size: 20px;
+      box-sizing: content-box;
+    }
+  }
+  .hidden{
+    display: none;
+  }
+}

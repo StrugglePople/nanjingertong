@@ -1,0 +1,92 @@
+page-source-time-modal {
+  .source-title {
+    position: relative;
+    font-size: 13px;
+    color: #111111;
+    line-height: 20px;
+    width: auto;
+    height: pxTorem(100px);
+    padding-left: pxTorem(80px);
+    .icon {
+      position: absolute;
+      left: pxTorem(15px);
+      top: pxTorem(20px);
+      background-size: pxTorem(10px) !important;
+      color: #ffffff;
+      border-radius: 50%;
+      text-align: center;
+      height: pxTorem(58px);
+      width: pxTorem(58px);
+      line-height: pxTorem(58px);
+      background-color: #EC6386;
+      font-size: 18px;
+    }
+    .name {
+      line-height: 30px;
+      font-size: 20px;
+    }
+    .mobile{
+      font-size: 13px;
+    }
+    .detail-title{
+      font-size: 14px;
+      color: #888888;
+    }
+    .item-inner{
+      border: none !important;
+    }
+    .introduction{
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      border: 1px solid #EC6386;
+      width: 51px;
+      line-height: 20px;
+      padding-left: 5px;
+    }
+  }
+  .time{
+    padding-left: 30px;
+    line-height: 25px;
+  }
+  .source-item{
+    border-top: 1px dashed #D2D2D2;
+    border-bottom: 1px solid #EAEAEA;
+    ion-col{
+      padding: 10px 0;
+    }
+    .right-border{
+      border-right: 1px solid #EAEAEA;
+    }
+    .source-body{
+      width: 60%;
+      margin: 0 auto;
+      .go-appoint{
+        border-radius: 2px;
+        height: 30px;
+        line-height: 30px;
+        color: #ffffff;
+        margin-top: 10px;
+      }
+      .has-source{
+        background: #EC6386;
+      }
+      .no-source{
+        background: #DAD8D8;
+      }
+      .source-time{
+        font-size: 13px;
+        color: #111111;
+      }
+      .source-price{
+        font-size: 17px;
+        color: #FF513C;
+      }
+      .source-type{
+        font-size: 13px;
+        color: #A5A5A5;
+      }
+    }
+
+  }
+}

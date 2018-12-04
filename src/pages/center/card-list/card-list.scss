@@ -1,0 +1,39 @@
+page-card-list {
+  .button-2 {
+    height: pxTorem(44px);
+    position: relative;
+    background-color: #fff;
+    .item-inner{
+      background: none !important;
+      border-bottom: none !important;
+    }
+    .icon {
+      width: pxTorem(20px);
+      height: pxTorem(20px);
+      position: absolute;
+      left: pxTorem(15px);
+      top: 50%;
+      margin-top: pxTorem(-10px);
+    }
+    .title {
+      position: absolute;
+      left: pxTorem(16px);
+      top: 0;
+      color: #EC6386;
+      line-height: pxTorem(44px);
+    }
+    .detail-title {
+      position: absolute;
+      right: pxTorem(39px);
+      top: 0;
+      line-height: pxTorem(44px);
+      font-size: pxTorem(15px);
+    }
+  }
+  .one-person{
+    margin-bottom: 10px;
+    .card-item:last-child .item-inner{
+      border-bottom: none;
+    }
+  }
+}

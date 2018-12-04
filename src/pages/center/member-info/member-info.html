@@ -1,0 +1,118 @@
+<!--
+  Generated template for the MemberInfo page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>持卡人管理</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="saveMember()">
+        {{title}}
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content bg-color-1>
+  <!--持卡人信息-->
+  <ion-list>
+    <ion-list-header>
+      <span title-color-2>患儿信息</span>
+    </ion-list-header>
+    <ion-item>
+      <ion-label title-color-1 fixed>姓名</ion-label>
+      <ion-input type="text" [(ngModel)]="member.name" placeholder="请输入真实姓名" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label title-color-1 fixed>身份证</ion-label>
+      <ion-input type="text" (ngModelChange)="paperNoChange($event)" [(ngModel)]="member.paperNo" placeholder="请输入真实身份证号" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-grid no-padding>
+        <ion-row class="member-sex" [ngStyle]="{'min-height': '24px', 'line-height': '24px'}">
+          <label class="input-label" title-color-1 [ngStyle]="{'min-width': '105px'}">性别</label>
+          <ion-col class="radio-col" tappable (click)="member.sex = 'MALE'">
+            <div [ngClass]="{'checked' : member.sex=='MALE'}" class="radio">
+              <div class="icon"></div>
+            </div>
+            <div class="title" title-color-1>男</div>
+          </ion-col>
+          <ion-col class="radio-col" tappable (click)="member.sex = 'FEMALE'">
+            <div [ngClass]="{'checked' : member.sex=='FEMALE'}" class="radio">
+              <div class="icon"></div>
+            </div>
+            <div class="title" title-color-1>女</div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <ion-item>
+      <ion-label title-color-1 fixed>出生日期</ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD" placeholder="请选择出生日期" [(ngModel)]="member.birthday" cancelText="取消" doneText="确定"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  <!--<module-separate></module-separate>-->
+  <!--监护人信息-->
+  <ion-list>
+    <ion-list-header>
+      <span title-color-2>家长信息</span>
+    </ion-list-header>
+    <ion-item>
+      <ion-label title-color-1 fixed>手机号</ion-label>
+      <ion-input type="text" [(ngModel)]="member.mobileNo" placeholder="请输入手机号" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label title-color-1 fixed>家长姓名</ion-label>
+      <ion-input type="text" [(ngModel)]="member.parentName" placeholder="请输入家长姓名" clearInput></ion-input>
+    </ion-item>
+    <ion-item tappable (click)="chooseAddress()">
+      <ion-label title-color-1 fixed>地址</ion-label>
+      <div item-content class="over-flow"> {{member.address}}</div>
+      <!--<ion-row>
+        <ion-col title-color-1 col-4>地址</ion-col>
+        <ion-col col-8>{{member.address || '请输入地址'}}</ion-col>
+      </ion-row>-->
+    </ion-item>
+  </ion-list>
+  <!--<module-separate></module-separate>-->
+
+  <ion-list>
+    <ion-list-header>
+      <span title-color-2>就诊卡信息</span>
+    </ion-list-header>
+    <button ion-item class="button-2" (click)="addCard('jiuZhen')">
+      <div class="icon add-btn-icon"></div>
+      <div class="title">添加就诊卡</div>
+      <div class="icon-arrow"></div>
+    </button>
+    <div *ngFor="let card of member.cards" >
+      <ion-item *ngIf="card.medicalCardType != '身份证'" class="card-item" tappable (click)="showCardInfo(card, 'jiuZhen')">
+        <div class="icon default" title-color-light text-center [ngClass]="{
+                    'zifei': card.medicalCardType == '院内卡' || card.medicalCardType == '其他' || card.medicalCardType == '南京市C卡',
+                    'shebao': card.medicalCardType == '社保卡' || card.medicalCardType == '医保卡'|| card.medicalCardType == '住院号',
+                    'idCard': card.medicalCardType == '身份证' || card.medicalCardType == '无卡'}">
+          <div class="text-center light">{{card.medicalCardType}}</div>
+        </div>
+        <div class="name">{{card.name}}</div>
+        <div class="card-no">{{card.medicalCardNo}}</div>
+        <div class="icon-arrow"></div>
+      </ion-item>
+    </div>
+
+  </ion-list>
+  <module-separate num="2"></module-separate>
+  <module-separate></module-separate>
+  <button ion-button full round zk-button-full (click)="deleteMember()" *ngIf="member.id > 0">删除就诊人</button>
+
+  <div class="remind-content"  title-color-2>
+    <div class="title">注意事项</div>
+    <p class="content" style="text-indent: 2em;height: auto;">1、若无卡用户（无医保卡、无南京市C卡），则填写身份证号，然后保存；无卡用户预约成功之后，在就诊时间前30分钟凭预约短信至门诊各收费窗口取卡后再候诊，办卡工本费5元。</p>
+    <p class="content" style="text-indent: 2em;height: auto;">2、手机号将用于短信（电话）通知，故请认真填写，无手机号可填写其他家人手机号（多个持卡人可以共用一个手机号）。</p>
+    <p class="content" style="text-indent: 2em;height: auto;">3、如发现私自绑定他人手机号，将追究其法律责任。</p>
+  </div>
+</ion-content>

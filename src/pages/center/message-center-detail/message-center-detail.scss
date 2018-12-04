@@ -1,0 +1,32 @@
+page-message-center-detail {
+  .appoint-body{
+    margin: 15px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 10px 2px rgba(0,0,0,0.30);
+    border-radius: 10px;
+    font-size: 16px;
+    width: auto;
+    overflow: hidden;
+    .item-block{
+      height: 30px;
+    }
+    .item-block .item-inner{
+      border:none;
+    }
+    .fist-item ion-row{
+      padding-left: 0;
+    }
+    .fist-item{
+      border-bottom: 1px dashed #D2D2D2;
+    }
+
+    .detail-content{
+      line-height: 25px;
+      padding: 15px;
+    }
+    .detail-content.time{
+      padding-top: 0;
+    }
+  }
+
+}

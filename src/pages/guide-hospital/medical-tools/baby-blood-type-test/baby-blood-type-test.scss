@@ -1,0 +1,25 @@
+page-baby-blood-type-test {
+  .item-ios.item-block .item-inner {
+    border-bottom: 0;
+  }
+  .xuexing{
+    margin-top: 15px;
+    ion-col{
+      height: 50px;
+      line-height: 40px;
+      text-align: center;
+      background-color: #D2D2D2;
+      margin-right: 2px;
+    }
+    .radius-left{
+      border-radius: 25px 0 0 25px;
+    }
+    .radius-right{
+      border-radius: 0 25px 25px 0;
+      margin-right: 0;
+    }
+    .select{
+      background-color: #41C7B4 !important;
+    }
+  }
+}

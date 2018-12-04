@@ -1,0 +1,52 @@
+<!--
+  Generated template for the Login page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>消息中心</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <!--<div style="padding: 10px 30px">
+    <ion-segment [(ngModel)]="selectIndex" (ionChange)="segmentChanged($event)" color="green">
+      <ion-segment-button value="0">
+        就诊消息
+      </ion-segment-button>
+      <ion-segment-button value="1">
+        消息公告
+      </ion-segment-button>
+    </ion-segment>
+  </div>-->
+  <ion-list>
+    <ion-item-sliding tappable *ngFor="let message of messages">
+      <ion-item (click)="showMessgaDetail(message)">
+        <div class="point" [ngClass]="{'read':message.readOrNot == 'YES'}"></div>
+        <ion-row>
+          <ion-col class="title" text-over col-7>{{message.titleStr}}</ion-col>
+          <ion-col text-right class="time" text-over col-5>{{message.messageTime}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="detail">{{message.content}}</ion-col>
+        </ion-row>
+      </ion-item>
+
+      <ion-item-options side="right">
+        <button ion-button expandable color="danger" (click)="deleteMessageFromList(message.aesId)">
+          <ion-icon>删除</ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+  <div tappable (click)="getMessages()" *ngIf="hasMore" title-color-2 size-small-2 text-center style="line-height: 40px">
+    更多历史
+  </div>
+  <empty-view *ngIf="!messages.length > 0" [text]="'暂无消息'"></empty-view>
+</ion-content>

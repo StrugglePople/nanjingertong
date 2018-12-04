@@ -1,0 +1,51 @@
+<!--
+  Generated template for the ClinicInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>就诊卡充值</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content bg-color-1>
+  <div class="clinic-info-top" bg-color-light bottom-line (click)="pushView('CardListPage',{'cardType' : '就诊卡'})" tappable>
+    <div class="remind" size-big-1 title-color-1 *ngIf="card.medicalCardNo">{{card.name}} {{card.medicalCardNo}}</div>
+    <!--<div class="detail-title" size-small-1 title-color-2 *ngIf="card.medicalCardNo" [ngSwitch]="card.medicalCardType">
+      <span *ngSwitchCase="'其他'">院内卡</span>
+      <span *ngSwitchDefault>{{card.medicalCardType}}</span>
+      : {{card.medicalCardNo}}</div>-->
+    <div class="remind" size-big-1 title-color-2 *ngIf="!card.medicalCardNo">请选择就诊卡</div>
+    <i class="icon-arrow"></i>
+  </div>
+  <module-separate></module-separate>
+
+  <ion-list>
+    <ion-item>
+      <ion-row>
+        <ion-col title-color-4>余额</ion-col>
+        <ion-col text-right title-color-1>{{balance}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col title-color-4>充值金额</ion-col>
+        <ion-col text-right title-color-1>
+          <input class="chargeMoney" type="number" placeholder="充值金额" [(ngModel)]="chargeMoney">
+        </ion-col>
+        <!--<ion-input type="number" placeholder="请输入充值金额"></ion-input>-->
+      </ion-row>
+    </ion-item>
+
+
+  </ion-list>
+
+
+  <module-separate></module-separate>
+
+  <button ion-button full round zk-button-full button-theme (click)="chargeCard()">确认充值{{clinicStr}}</button>
+
+</ion-content>

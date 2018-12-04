@@ -1,0 +1,35 @@
+page-card-charge {
+  .chargeMoney{
+    border:none;
+    text-align: right;
+    width: 100px;
+  }
+  .clinic-info-top {
+    height: pxTorem(60px);
+    position: relative;
+  }
+  .clinic-info-top .title {
+    position: absolute;
+    left: pxTorem(15px);
+    top: pxTorem(8px);
+    right:0;
+  }
+  .clinic-info-top .detail-title {
+    position: absolute;
+    left: pxTorem(15px);
+    bottom: pxTorem(8px);
+    right:0;
+  }
+  .clinic-info-top .remind {
+    padding-left: pxTorem(15px);
+    line-height: pxTorem(60px);
+  }
+
+  .protocol{
+    text-decoration: underline;
+    position: absolute;
+    left: pxTorem(175px);
+    top: 0;
+    line-height: pxTorem(46px);
+  }
+}

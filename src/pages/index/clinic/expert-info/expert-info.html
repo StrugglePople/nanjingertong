@@ -1,0 +1,90 @@
+<!--
+  Generated template for the ExpertInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>专家详情</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="navCtrl.popToRoot()">
+        <ion-icon name="ios-home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content bg-color-1>
+  <div class="nav-expert-bar">
+    <div class="icon">
+      <img [src]="doctorDefail + expert.picName">
+    </div>
+    <div class="title" text-center title-color-light size-middle>
+      {{expert.name}} <span size-small-3>{{expert.title}}</span>
+    </div>
+  </div>
+  <module-separate></module-separate>
+
+  <div class="icon-content-wrapper" top-bottom-line bg-color-light>
+    <div class="icon-header">
+      <i class="icon position"></i>
+      <div class="title" size-small-1 title-color-1>门诊出诊</div>
+    </div>
+    <div class="content" size-small-2 title-color-4>
+      {{dept ? dept.name : ''}} <br/>
+      {{expert.expertTimePrice}}
+    </div>
+  </div>
+  <module-separate></module-separate>
+
+  <div class="icon-content-wrapper" top-bottom-line bg-color-light>
+    <div class="icon-header">
+      <i class="icon specialize"></i>
+      <div class="title" size-small-1 title-color-1>擅长</div>
+      <!--<div class="right-btn title-color-3 size-14" (click)="sb=!sb" tappable>
+        <span *ngIf="!sb">展开</span>
+        <span *ngIf="sb">收起</span>
+      </div>-->
+    </div>
+    <div class="content size-14 title-color-4" [ngClass]="{'ellipsis': !sb}">
+      {{expert.speciality}}
+    </div>
+  </div>
+  <module-separate></module-separate>
+
+  <div class="icon-content-wrapper" top-bottom-line bg-color-light>
+    <div class="icon-header">
+      <i class="icon abstract"></i>
+      <div class="title" size-small-1 title-color-1>简介</div>
+      <!--<div class="right-btn title-color-3 size-14" (click)="ib=!ib" tappable>
+        <span *ngIf="!ib">展开</span>
+        <span *ngIf="ib">收起</span>
+      </div>-->
+    </div>
+    <div class="content size-14 title-color-4" [ngClass]="{'ellipsis': !ib}">
+      {{expert.introduction}}
+    </div>
+  </div>
+  <!--<ion-row class="appointment-type">
+    <ion-col>
+      <button ion-button col class="ordinary" (click)="scheduleRealtime('SCHEDULE_RESERVATION')">
+        快速预约
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button col class="expert" (click)="scheduleRealtime('SCHEDULE_REALTIME')">
+        快速挂号
+      </button>
+    </ion-col>
+  </ion-row>-->
+  <!--<module-separate></module-separate>
+
+  <button ion-button full round zk-button-full button-theme (click)="showSelect()">预约挂号</button>
+  <ion-select  [hidden]="true" (ionChange)="select($event)" cancelText="取消" okText="确定" #sel>
+    <ion-option *ngFor="let item of depts" [value]="item">{{item.name}}</ion-option>
+  </ion-select>-->
+</ion-content>

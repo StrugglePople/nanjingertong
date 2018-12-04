@@ -1,0 +1,28 @@
+<!--
+  Generated template for the HepatitisBSelfTestResult page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>乙肝自测</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="navCtrl.popToRoot()">
+        <ion-icon name="ios-home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content bg-color-1>
+  <p title-color-1 size-small-2>您的乙肝自测结果为：</p>
+  <p round-line title-color-1 size-small-2 style="margin: 0 10px">
+    {{content}}
+  </p>
+
+  <p style="color: #e07046; font-size: 10px">【注：以上乙肝自测结果仅供参考，如有疑问请及时咨询专家医生。】</p>
+</ion-content>

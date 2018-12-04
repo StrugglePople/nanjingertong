@@ -1,0 +1,66 @@
+<!--
+  Generated template for the Center page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>个人中心</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content bg-color-1>
+
+  <div class="item-icon-left fun-item header-title" title-color-1>
+    <!--<div class="header-img">
+      <img [src]="headIcon" />
+    </div>-->
+    <ion-row>
+      <ion-col *ngIf="isLogin">账号：{{code.substr(0,3) + ' ' + code.substr(3,4) + ' ' + code.substr(7)}}</ion-col>
+    </ion-row>
+  </div>
+  <!--pushView('AppointmentRecordPage', {'needLogin': true})-->
+  <ion-row class="member-record">
+    <ion-col class="top-1" text-center tappable title-color-9 (click)="pushView('MemberListPage', {'needLogin': true})">
+      <img class="icon" [src]="topModule[0]"/>
+      <div class="title">就诊人管理</div>
+    </ion-col>   <!--person-admin-->
+    <ion-col class="top-2" text-center tappable title-color-9 (click)="pushView('CheckInspectRecord', {'needLogin': true,type:'YUYUE-RECORD'})">
+      <img class="icon" [src]="topModule[1]"/>
+      <div class="title">预约挂号记录</div>
+    </ion-col>
+    <ion-col class="top-3" text-center tappable title-color-9 (click)="pushView('MessageCenter', {'needLogin': true})" style="position: relative;">
+      <img class="icon" [src]="topModule[2]"/>
+      <div class="no-read">{{unReadNumber}}</div>
+      <div class="title">消息中心</div>
+    </ion-col>
+  </ion-row>
+  <div class="add-member-index" tappable (click)="pushView('MemberInfoPage',{member: {}})">
+    + 就诊人
+
+  </div>
+  <module-separate></module-separate>
+  <ion-list>
+    <!--<ion-item class="item-icon-left fun-item" detail-push tappable title-color-1>
+      <div class="left-icon center-2"></div>操作指南
+    </ion-item>-->
+    <ion-item class="fun-item" detail-push tappable title-color-1 (click)="pushView('FeedBackPage')">
+      <div class="left-icon center-1" title-color-9></div>投诉建议
+    </ion-item>
+    <ion-item class="fun-item" detail-push tappable title-color-1 (click)="pushView('ResetPasswordPage', {'needLogin': true})">
+      <div class="left-icon center-4" title-color-9></div>修改密码
+    </ion-item>
+    <ion-item class="fun-item" detail-push tappable title-color-1 (click)="pushView('ResetAccountPage', {'needLogin': true})">
+      <div class="left-icon center-5" title-color-9></div>重置账号
+    </ion-item>
+    <ion-item class="fun-item" detail-push tappable title-color-1 (click)="pushView('MorePage')">
+      <div class="left-icon center-3" title-color-9></div>更多
+    </ion-item>
+
+  </ion-list>
+
+
+  <button class="log-out" ion-button (click)="logout()" bg-color-light size-big-2>退出登录</button>
+  <module-separate [num]="2"></module-separate>
+</ion-content>

@@ -1,0 +1,40 @@
+<!--
+  Generated template for the DiagnoseSelectedSymptomPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>医疗大数据</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="navCtrl.popToRoot()">
+        <ion-icon name="ios-home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content bg-color-1>
+  <module-separate></module-separate>
+  <ion-list>
+    <ion-item *ngFor="let item of data">
+      {{item.syspmtomName}}
+      <div class="radio-col">
+        <div [ngClass]="{'checked' : item.checked}" class="radio"  style="left: inherit; right: 15px"
+             tappable (click)="clickSymptom(item)">
+          <div class="icon"></div>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+  <div size-small-4 title-color-2 style="padding-left: 15px;line-height: 20px">可以返回前面流程继续添加症状</div>
+</ion-content>
+
+<ion-footer>
+  <button ion-button full round zk-button-full button-theme (click)="showDiseaseView()">下一步</button>
+  <module-separate></module-separate>
+</ion-footer>

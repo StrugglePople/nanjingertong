@@ -1,0 +1,66 @@
+page-clinic-info {
+  .clinic-info-top {
+    height: pxTorem(60px);
+    position: relative;
+  }
+  .clinic-info-top .title {
+    position: absolute;
+    left: pxTorem(15px);
+    top: pxTorem(8px);
+    right:0;
+  }
+  .clinic-info-top .detail-title {
+    position: absolute;
+    left: pxTorem(15px);
+    bottom: pxTorem(8px);
+  }
+  .clinic-info-top .remind {
+    padding-left: pxTorem(15px);
+    line-height: pxTorem(60px);
+  }
+
+  .protocol{
+    text-decoration: underline;
+    position: absolute;
+    left: pxTorem(45px);
+    top: 0;
+    line-height: pxTorem(46px);
+  }
+  .clinic-body{
+    margin: 10px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.10);
+    border-radius: 10px;
+    width: auto;
+    overflow: hidden;
+    .item-block{
+      height: 30px;
+    }
+    .item-block .item-inner{
+      border:none;
+    }
+    .fist-item ion-row{
+      padding-left: 0;
+    }
+    .fist-item.item-block .item-inner{
+      border-bottom: 1px dashed #D2D2D2;
+    }
+    ion-row{
+      padding: 0 15px;
+    }
+  }
+  .checkbox-ios{
+    .checkbox-icon{
+      border-radius: 0;
+      width: 15px;
+      height: 15px;
+
+    }
+    .checkbox-checked .checkbox-inner{
+      top: 2px;
+      left: 5px;
+    }
+  }
+
+
+}

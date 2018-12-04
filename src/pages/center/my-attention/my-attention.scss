@@ -1,0 +1,40 @@
+page-my-attention {
+  .attention-item-top {
+    height: pxTorem(77px);
+    position: relative;
+    padding-left: pxTorem(80px);
+  }
+
+  .attention-item-top img {
+    position: absolute;
+    width: pxTorem(50px);
+    height: pxTorem(50px);
+    top: 50%;
+    margin-top: pxTorem(-25px);
+    left: pxTorem(15px);
+    border-radius: pxTorem(50px);
+  }
+  .attention-item-top .top-title {
+    padding-top: pxTorem(20px);
+  }
+  .attention-item-top .cancel-btn{
+    position: absolute;
+    top: pxTorem(20px);
+    right: pxTorem(15px);
+    height: pxTorem(20px);
+    width: pxTorem(64px);
+    border: pxTorem(1px) solid #ff8971;
+    text-align: center;
+    font-size: pxTorem(13px);
+    border-radius: pxTorem(100px);
+    line-height: pxTorem(18px);
+  }
+  .attention-item-bottom {
+    padding: 0 pxTorem(15px) pxTorem(12px) pxTorem(15px);
+    font-size: pxTorem(14px);
+    color: #7f7f7f;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}

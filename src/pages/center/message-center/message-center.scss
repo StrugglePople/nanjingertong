@@ -1,0 +1,34 @@
+page-message-center {
+  .title{
+    font-size: 16px;
+    color: #333333;
+  }
+  .time,.detail{
+    font-size: 14px;
+    color: #9B9B9B;
+  }
+  .time{
+    line-height: 21px;
+  }
+  .detail{
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+  }
+  .label-ios {
+    margin: 8px 8px 8px 0;
+  }
+  .point{
+    position: absolute;
+    background-color: red;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    top: 19px;
+    left: 6px;
+  }
+  .point.read{
+    display: none;
+  }
+
+}

@@ -1,0 +1,57 @@
+<!--
+  Generated template for the DiagnoseDiseaseDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>医疗大数据</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="navCtrl.popToRoot()">
+        <ion-icon name="ios-home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content bg-color-1>
+  <module-separate></module-separate>
+  <div text-center title-color-1 size-big-2>{{data.name}}</div>
+  <div style="padding: 5px 15px">
+    <div class="title-flag">
+      <div class="flag"></div>
+      <div size-small-1 style="line-height: 30px">症状</div>
+    </div>
+    <div class="size-14 title-color-4">
+      {{data.represent}}
+    </div>
+  </div>
+  <div style="padding: 5px 15px">
+    <div class="title-flag">
+      <div class="flag"></div>
+      <div size-small-1 style="line-height: 30px">简述</div>
+    </div>
+    <div class="size-14 title-color-4">
+      {{data.resume}}
+    </div>
+  </div>
+  <div style="padding: 5px 15px">
+    <div class="title-flag">
+      <div class="flag"></div>
+      <div size-small-1 style="line-height: 30px">所属科室</div>
+    </div>
+    <ion-grid>
+      <ion-row *ngFor="let item of data.matchedDepts">
+        <ion-col col-10 title-color-4 size-small-2>{{item.name}}</ion-col>
+        <!--<ion-col col-2 text-right title-color-3 (click)="clinic(item)"-->
+                 <!--*ngIf="item.canDeptReg == 'ENABLE' || item.canExpertReg == 'ENABLE'">-->
+          <!--去挂号-->
+        <!--</ion-col>-->
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

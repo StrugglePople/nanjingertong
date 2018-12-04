@@ -1,0 +1,150 @@
+<!--
+  Generated template for the ExpertSchedulePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="navCtrl.popToRoot()">
+        <ion-icon name="ios-home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="nav-expert-bar">
+    <div class="icon">
+      <img [src]="expert.src">
+    </div>
+    <div class="title" text-center title-color-light size-middle>
+      {{expert.name}} <span size-small-3>{{expert.title}}</span>
+    </div>
+    <!--<div [ngClass]="{true: 'attent', false: 'no-attent'}[attentionId > 0]" bg-color-light (click)="attention()">-->
+      <!--<span *ngIf="attentionId > 0" class="size-12 title-color-3">已关注</span>-->
+      <!--<span *ngIf="!attentionId || attentionId <= 0" size-small-4 title-color-3>未关注</span>-->
+    <!--</div>-->
+  </div>
+  <module-separate></module-separate>
+
+  <ion-list>
+    <ion-item>
+      <ion-row>
+        <ion-col col-4 title-color-1 size-small-1>时间区间</ion-col>
+        <ion-col col-8 title-color-4 size-small-1 text-right>{{timeQj}}</ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+  <module-separate></module-separate>
+
+  <div class="schedule-wrapper" bg-color-light top-line>
+    <!--上下午-->
+    <div class="time-flag-col" text-center size-small-4 title-color-4>
+      <div style="height: 49px"></div>
+      <div>上 午</div>
+      <div>下 午</div>
+      <div>全 天</div>
+    </div>
+    <div class="schedule-flag-col">
+      <ion-scroll scrollX="true" style="height: 20rem;">
+        <div [ngStyle]="{'width': dateItems.length * 50 / 10 + 'rem'}">
+          <ion-row style="height: 4.9rem">
+            <ion-col text-center title-color-1 size-small-2 style="padding: 8px 0;" *ngFor="let date of dateItems">
+              <div size-small-2>{{date.week}}</div>
+              <div size-small-6>{{date.dateStr}}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col *ngFor="let date of aDateItems">
+              <div class="clinic-button" title-color-light size-small-2 text-center *ngIf="date.schedule"
+                   [ngClass]="{'disabled': !date.schedule || date.schedule.leftNum ==0}" tappable (click)="chooseSchedule(date.schedule)">
+                <div>剩余</div>
+                <div>
+                  {{date.schedule.leftNum}}
+                  <!--<span *ngIf="date.dateStr1 == today">挂号</span>-->
+                  <!--<span *ngIf="date.dateStr1 != today">预约</span>-->
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col *ngFor="let date of pDateItems">
+              <div class="clinic-button" title-color-light size-small-2 text-center *ngIf="date.schedule"
+                   [ngClass]="{'disabled': !date.schedule || date.schedule.leftNum ==0}" tappable (click)="chooseSchedule(date.schedule)">
+                <div>剩余</div>
+                <div>
+                  {{date.schedule.leftNum}}
+                  <!--<span *ngIf="date.dateStr1 == today">挂号</span>-->
+                  <!--<span *ngIf="date.dateStr1 != today">预约</span>-->
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col *ngFor="let date of eDateItems">
+              <div class="clinic-button" title-color-light size-small-2 text-center *ngIf="date.schedule"
+                   [ngClass]="{'disabled': !date.schedule || date.schedule.leftNum ==0}" tappable (click)="chooseSchedule(date.schedule)">
+                <div>剩余</div>
+                <div>
+                  {{date.schedule.leftNum}}
+                  <!--<span *ngIf="date.dateStr1 == today">挂号</span>-->
+                  <!--<span *ngIf="date.dateStr1 != today">预约</span>-->
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-scroll>
+    </div>
+  </div>
+  <div size-small-2 title-color-2 text-center style="padding: 10px" *ngIf="expert.regScheduleVOList.length == 0">该医生无排班</div>
+  <module-separate></module-separate>
+
+  <div class="icon-content-wrapper" top-bottom-line bg-color-light>
+    <div class="icon-header">
+      <i class="icon position"></i>
+      <div class="title" size-small-1 title-color-1>门诊出诊</div>
+    </div>
+    <div class="content" size-small-2 title-color-4>
+      {{dept.name}} <br/>
+      {{expert.expertTimePrice}}
+    </div>
+  </div>
+  <module-separate></module-separate>
+
+  <div class="icon-content-wrapper" top-bottom-line bg-color-light>
+    <div class="icon-header">
+      <i class="icon specialize"></i>
+      <div class="title" size-small-1 title-color-1>擅长</div>
+      <!--<div class="right-btn title-color-3 size-14" tappable (click)="sb=!sb">
+        <span *ngIf="!sb">展开</span>
+        <span *ngIf="sb">收起</span>
+      </div>-->
+    </div>
+    <div class="content size-14 title-color-4" [ngClass]="{'ellipsis': !sb}">
+      {{expert.speciality}}
+    </div>
+  </div>
+  <module-separate></module-separate>
+
+  <div class="icon-content-wrapper" top-bottom-line bg-color-light>
+    <div class="icon-header">
+      <i class="icon abstract"></i>
+      <div class="title" size-small-1 title-color-1>简介</div>
+      <!--<div class="right-btn title-color-3 size-14" tappable (click)="ib=!ib">
+        <span *ngIf="!ib">展开</span>
+        <span *ngIf="ib">收起</span>
+      </div>-->
+    </div>
+    <div class="content size-14 title-color-4" [ngClass]="{'ellipsis': !ib}">
+      {{expert.introduction}}
+    </div>
+  </div>
+  <module-separate></module-separate>
+</ion-content>

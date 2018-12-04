@@ -1,0 +1,33 @@
+page-fee-record-detail {
+  .item-table-content{
+    padding: 0 2%;
+    background-color: #ffffff;
+  }
+  .item-table{
+    position: relative;
+    min-height: 30px;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  .item-table:first-child{
+    border-width: 1px 0 1px 0;
+  }
+  .item-table .td{
+    position: relative;
+    width: 20%;
+    min-height: 20px;
+    height: 100%;
+    text-align: center;
+    font-size: 14px;
+    padding: 5px;
+    color: #3a3a3a;
+  }
+  .item-table .title .td{
+    color: #95C268;
+    font-weight: bold;
+  }
+  table td{
+    width: 20%;
+  }
+}

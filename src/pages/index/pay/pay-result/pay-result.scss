@@ -1,0 +1,27 @@
+page-pay-result {
+  .success-view {
+    height: pxTorem(170px);
+  }
+  .error-view {
+    height: pxTorem(140px);
+  }
+  .success-view .icon, .error-view .icon {
+    margin: 0 auto;
+  }
+  .success-view .icon {
+    background: url("../assets/image/widget/success.png") no-repeat;
+    background-size: pxTorem(145px) pxTorem(120px);
+    width: pxTorem(145px);
+    height: pxTorem(120px);
+  }
+  .error-view .icon {
+    background: url("../assets/image/widget/error.png") no-repeat;
+    background-size: pxTorem(163px) pxTorem(82px);
+    width: pxTorem(163px);
+    height: pxTorem(82px);
+  }
+  .success-view .title, .error-view .title {
+    margin-top: pxTorem(20px);
+    text-align: center;
+  }
+}

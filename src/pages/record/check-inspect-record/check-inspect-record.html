@@ -1,0 +1,59 @@
+<!--
+  Generated template for the HtmlInfo page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div [ngSwitch]="type">
+    <ion-list *ngSwitchCase="'CHECK-INSPECT'" class="select-area">
+      <div tappable (click)="pushView('CheckRecordPage', {'needLogin': true})" style="margin-bottom: 20px;">
+        <img src="assets/image/common/jiancha.png">
+      </div>
+      <div tappable (click)="pushView('InspectRecordPage', {'needLogin': true})">
+        <img src="assets/image/common/jianyan.png">
+      </div>
+      <!--<ion-item detail-push tappable (click)="pushView('CheckRecordPage', {'needLogin': true})">检查记录</ion-item>-->
+      <!--<ion-item detail-push tappable (click)="pushView('InspectRecordPage', {'needLogin': true})">检验记录</ion-item>-->
+      <div class="bottom-information">
+        <div text-center>温馨提示</div>
+        本平台报告仅供参考，以纸质打印报告为准！
+      </div>
+    </ion-list>
+    <ion-list *ngSwitchCase="'YUYUE-RECORD'">
+      <ion-item detail-push tappable (click)="pushView('AppointmentRecordPage', {'needLogin': true,regType:0})">预约记录</ion-item>
+      <ion-item detail-push tappable (click)="pushView('AppointmentRecordPage', {'needLogin': true,regType:1})">挂号记录</ion-item>
+    </ion-list>
+    <div *ngSwitchCase="'YUANNEI-DAOHANG'" class="select-area">
+      <div class="guangzhou" tappable (click)="pushView('HospitalInNavPage', {address:'guangzhou'})">
+        <img src="assets/image/common/guangzhoulu.png">
+      </div>
+      <div class="hexi" tappable (click)="pushView('HospitalInNavPage', {address:'hexi'})">
+        <img src="assets/image/common/hexiyuanqu.png">
+      </div>
+    </div>
+    <div *ngSwitchCase="'YUANWAI-DAOHANG'" class="select-area">
+      <div class="guangzhou" tappable (click)="openMap('guangzhou')">
+        <img src="assets/image/common/guangzhoulu.png">
+      </div>
+      <div class="hexi" tappable (click)="openMap('hexi')">
+        <img src="assets/image/common/hexiyuanqu.png">
+      </div>
+    </div>
+    <ion-list *ngSwitchCase="'PHONE_NUMBER'">
+      <ion-item detail-push tappable (click)="getTel(phone.split('_')[0])">{{phone.split('_')[0]}}</ion-item>
+      <ion-item detail-push tappable (click)="getTel(phone.split('_')[1])">{{phone.split('_')[1]}}</ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>
+<!--pushView('AppointmentRecordPage', {'needLogin': true})-->

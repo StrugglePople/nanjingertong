@@ -1,0 +1,21 @@
+page-outpatient-payment {
+  .item-block{
+    margin: 15px;
+    width: auto;
+    height: 100px;
+    background-color: #FFFFFF !important;
+    border-radius: 10px;
+    .item-inner{
+      border: none !important;
+      padding-left: 65px;
+    }
+  }
+
+  @for $i from 1 through 5{
+    .payment-#{$i}{
+      background: url("../assets/image/index/payment-#{$i}.png") no-repeat 5px center;
+      background-size: 65px auto;
+    }
+  }
+
+}

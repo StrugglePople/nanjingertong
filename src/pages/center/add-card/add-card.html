@@ -1,0 +1,126 @@
+<!--
+  Generated template for the AddCard page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>添加{{type == 'jiuZhen' ? '就诊卡' : '住院号'}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="save()">
+        保存
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content bg-color-1>
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail item-left>
+        <img [src]="iconImgSrc">
+      </ion-thumbnail>
+      <h2>{{hospitalName}}</h2>
+    </ion-item>
+  </ion-list>
+
+  <module-separate></module-separate>
+
+  <div [ngSwitch]="hospitalConfig.bindCard">
+    <!--CARD-->
+    <ion-list *ngSwitchCase="'CARD'">
+      <ion-list-header>
+        <i class="icon ion-remind"></i>
+        <span title-color-2>请输入您的{{typeStr}}</span>
+      </ion-list-header>
+      <ion-item>
+        <ion-label title-color-1 fixed>姓名</ion-label>
+        <ion-input type="text" [ngModel]="member.name" readonly></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label title-color-1 fixed>{{typeStr}}</ion-label>
+        <ion-input type="text" [(ngModel)]="card.medicalCardNo" placeholder="请输入{{typeStr}}" clearInput></ion-input>
+      </ion-item>
+    </ion-list>
+    <!--CARDTYPE-->
+    <ion-list *ngSwitchCase="'CARDTYPE'">
+      <ion-list-header>
+        <i class="icon ion-remind"></i>
+        <span title-color-2>请输入您的{{typeStr}}</span>
+      </ion-list-header>
+      <ion-item>
+        <ion-label title-color-1 fixed>姓名</ion-label>
+        <ion-input type="text" [ngModel]="member.name" readonly></ion-input>
+      </ion-item>
+      <ion-item *ngIf="cardTypes.length == 1 && type=='jiuZhen'">
+        <ion-label title-color-1 fixed>就诊卡类型</ion-label>
+        <ion-input type="text" [ngModel]="card.medicalCardType" readonly></ion-input>
+      </ion-item>
+      <ion-item *ngIf="type=='jiuZhen' && cardTypes.length > 1" tappable (click)="sel.open()">
+        <ion-label title-color-1 fixed>就诊卡类型<i class="icon-arrow"></i></ion-label>
+
+        <ion-select class="select-card" [hidden]="false" (ionChange)="select($event)" cancelText="取消" okText="确定"  #sel>
+          <ion-option *ngFor="let item of cardTypes" [value]="item">{{item.name}}</ion-option>
+        </ion-select>
+        <!--<ion-input type="text" [ngModel]="card.medicalCardType" readonly></ion-input>-->
+      </ion-item>
+      <ion-item *ngIf="card.medicalCardType != '无卡'">
+        <ion-label title-color-1 fixed>{{typeStr}}</ion-label>
+        <ion-input type="text" [(ngModel)]="card.medicalCardNo" (ngModelChange)="changeCardNo($event)" placeholder="请输入{{typeStr}}" clearInput>
+        </ion-input>
+      </ion-item>
+    </ion-list>
+    <!--CARDLIST -->
+    <ion-list *ngSwitchCase="'CARDLIST'">
+      <ion-item class="item-divider item-icon-left" style="border-top: 0">
+        <i class="icon ion-remind"></i>
+        <div class="title-color-2" style="font-size: 13px;line-height: 30px;padding-left: 20px">请选择您的{{typeStr}}进行绑定</div>
+      </ion-item>
+      <ion-item class="card-item" ng-repeat="card in cardData" ng-click="bindCard(item)" ng-if='card.code != "PCARD"'>
+        <div class="icon" ng-class="{
+                    'zifei': card.medicalCardType == '院内卡' || card.medicalCardType == '其他' || card.medicalCardType == '自费卡',
+                    'shebao': card.medicalCardType == '社保卡' || card.medicalCardType == '医保卡',
+                    'idCard': card.medicalCardType == '平台卡',
+                    }">
+          <div class="text-center light">{{card.medicalCardType}}</div>
+        </div>
+        <div class="name">{{card.name}}</div>
+        <div class="card-no">{{card.medicalCardNo}}</div>
+        <div class="icon-arrow"></div>
+      </ion-item>
+    </ion-list>
+  </div>
+  <module-separate num="2"></module-separate>
+  <!--<button ion-button full round zk-button-full color="primary" (click)="save()">保存</button>-->
+  <div class="attention-info" style="background-color: transparent">
+    <p class="content">
+      如您的就诊卡号保存显示“<span>输入的卡号不存在</span>”，请您选择<span>无卡预约</span>。
+    </p>
+    <p class="content">
+      广州路就诊患者，请您就诊当天候诊时间段内携带就诊卡及<span>绑定的身份证号</span>至广州路院区门诊一楼一站式服务台、自助机挂号完善信息。
+    </p>
+    <p class="content">
+      河西院区就诊患者，请您就诊当天候诊时间段内携带就诊卡及<span>绑定的身份证号</span>至河西院区门诊一楼11号/12号窗口、自助机挂号完善信息。
+    </p>
+    <!--<p class="content" style="font-size: 12px;padding-bottom: 10px;color: red;line-height: 24px;">-->
+  </div>
+  <div class="card-info-img card-1" *ngIf="card.medicalCardType == '测试'">
+    <p>注意：</p>
+    <p style="text-indent: 2em;">南京市儿童医院就诊卡用户请输入卡背面的序列号</p>
+    <div class="card-img"></div>
+  </div>
+  <div class="card-info-img card-2" *ngIf="card.medicalCardType == '医保卡'">
+    <p>注意：</p>
+    <p style="text-indent: 2em;">社保卡用户请输入社保卡后面卡号的后12位</p>
+    <div class="card-img"></div>
+  </div>
+  <div class="card-info-img card-3" *ngIf="card.medicalCardType == '南京市C卡'">
+    <p>注意：</p>
+    <p style="text-indent: 2em;">南京医疗卡用户请输入医疗卡后面的卡号</p>
+    <div class="card-img"></div>
+  </div>
+</ion-content>

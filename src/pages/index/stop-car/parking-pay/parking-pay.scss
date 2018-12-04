@@ -1,0 +1,24 @@
+page-parking-pay {
+  .park-main {
+    width: 90%;
+    margin: 20px auto;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 16px;
+
+    .park_1 {
+      padding:15px 0;
+    }
+    .park_1 span {
+      display: inline-block;
+    }
+    .park_1 .content.red {
+      color:red;
+      font-size: 20px;
+    }
+  }
+
+}

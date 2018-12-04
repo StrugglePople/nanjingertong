@@ -1,0 +1,51 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>注册</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content bg-color-1>
+  <module-separate [num]="2"></module-separate>
+  <ion-list>
+    <ion-item>
+      <ion-input type="text" placeholder="请输入手机号" [(ngModel)]="mobile" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="请输入图片验证码"  [(ngModel)]="picVCode" clearInput></ion-input>
+      <div item-right>
+        <img [src] ="imgUrl" style="width: 90%;height: 100%" tappable (click)="refreshImg()">
+      </div>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="请输入验证码"  [(ngModel)]="securityCode" clearInput></ion-input>
+      <security-code type="register" [mobile]="mobile" [picVCode]="picVCode" item-right></security-code>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password" placeholder="请输入密码(6-16位字母或者数字)" [(ngModel)]="password" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password" placeholder="请确认密码" [(ngModel)]="rePassword" clearInput></ion-input>
+    </ion-item>
+  </ion-list>
+  <div style="position: relative;">
+    <ion-item no-lines bg-color-none>
+      <ion-label title-color-4 size-small-1>
+        我已阅读并同意
+      </ion-label>
+      <ion-checkbox color="primary" [(ngModel)]="protocolCheck"></ion-checkbox>
+    </ion-item>
+    <div title-color-1 size-middle tappable class="protocol" (click)="pushView('RegisterProtocolPage')">智康信息注册协议</div>
+  </div>
+
+  <module-separate [num]="2"></module-separate>
+  <button ion-button full round zk-button-full button-theme tappable (click)="register()">注册</button>
+</ion-content>

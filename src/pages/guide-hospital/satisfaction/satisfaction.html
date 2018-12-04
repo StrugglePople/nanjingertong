@@ -1,0 +1,60 @@
+<!--
+  Generated template for the SatisfactionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>满意度调查</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content bg-color-1>
+  <p style="text-indent: 2em;" title-color-1>为了提升我院的医疗服务质量，不断改进我们的工作，我们正在展开患者满意度调查，请针对以下每一个描述，
+    选择您认为最符合您本次就医感受的，非常感谢！</p>
+  <div *ngFor="let question of questions">
+    <div class="remind-1">
+      <div class="flag"></div>
+      <div size-small-1 class="title">{{question.title}}</div>
+    </div>
+    <div class="select-content">
+      <div class="left-zan ui-btn" data-action="deleteZan"></div>
+      <div class="right-zan ui-btn" data-action="addZan"></div>
+      <div class="select-list">
+        <ion-grid style="width: 100%;height: 100%">
+          <ion-row style="width: 100%;height: 100%">
+            <ion-col *ngFor="let option of question.option" tappable (click)="chooseOption(question, option)"
+            [ngClass]="{'sel': option.select, 'active': option.current}">
+              <i class="mark-sign"></i>
+              <i class="line"></i>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+  </div>
+  <module-separate></module-separate>
+  <p style="text-indent: 2em;" title-color-1>请在此处提出您的宝贵意见。</p>
+  <div text-center>
+    <textarea  placeholder="留下您宝贵的建议或意见" [(ngModel)]="remark" size-small-2></textarea>
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button ion-button full round zk-button-full button-theme tappable (click)="clear()">
+          重置
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button full round zk-button-full button-theme tappable (click)="confirm()">
+          提交
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

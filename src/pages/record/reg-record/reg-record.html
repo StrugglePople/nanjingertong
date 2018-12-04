@@ -1,0 +1,75 @@
+<!--
+  Generated template for the AppointmentRecord page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <member-select (selectMember)="afterSelectMember($event)" (noMembers)="noMembers()"></member-select>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doLoad($event)" *ngIf="member && member.id > 0">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <!--<div style="padding: 8px 0">-->
+    <!--<ion-grid no-padding>-->
+      <!--<ion-row class="time-section">-->
+        <!--<ion-col col-8 text-center title-color-3 class="time" style="margin: 0 5px">-->
+          <!--<ion-datetime displayFormat="YYYY-MM" placeholder="请选择日期" [(ngModel)]="endDate"-->
+                        <!--cancelText="取消" doneText="确定" max="{{maxDate}}"></ion-datetime>-->
+        <!--</ion-col>-->
+        <!--<ion-col col-3>-->
+          <!--<button full round ion-button button-theme no-margin style="margin: 0 5px;height: 4rem" (click)="loadData()">确定</button>-->
+        <!--</ion-col>-->
+      <!--</ion-row>-->
+    <!--</ion-grid>-->
+  <!--</div>-->
+  <ion-list class="record-list" *ngIf="dataList.length > 0">
+    <div *ngFor="let item of dataList">
+      <ion-item-divider color="light">
+        <div class="record-divider">{{item.monthName}}</div>
+      </ion-item-divider>
+      <ion-item detail-push class="record-cell" *ngFor="let item1 of item.regRecords" no-padding
+                tappable (click)="showDetailView('RegRecordDetailPage', item1)">
+        <ion-grid>
+          <ion-row>
+            <ion-col title-color-1 size-middle col-9>{{item1.deptName || item1.dept}}</ion-col>
+            <ion-col title-color-5 size-small-2 col-3 text-right>
+              <div *ngIf="!item1.status">
+                {{item1.expertName}}
+              </div>
+              <div *ngIf="item1.status">
+                <div title-color-5 size-small-2 [ngSwitch]="item1.status">
+                  <span *ngSwitchCase="'PASS'" title-color-3>挂号成功</span>
+                  <span *ngSwitchCase="'UNPASS'">挂号失败</span>
+                  <span *ngSwitchCase="'CANCELLED'">已撤销</span>
+                  <span *ngSwitchCase="'RETURNED'">未通过</span>
+                  <span *ngSwitchCase="'EXPIRED'">已过期</span>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col title-color-4 size-small-3>{{item1.cardNo || item1.medicalCardNo}}</ion-col>
+            <ion-col title-color-4 size-small-3 text-right>
+              {{item1.clinicTime || item1.regDate}}
+              <span *ngIf="item1.regTime==='MORNING'">上午</span>
+              <span *ngIf="item1.regTime==='AFTERNOON'">下午</span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <i class="nav" *ngIf="item1.addressId"></i>
+      </ion-item>
+    </div>
+  </ion-list>
+  <div (click)="getServiceData()" *ngIf="hasMore" title-color-2 size-small-2 text-center style="line-height: 40px">
+    更多历史
+  </div>
+  <empty-view *ngIf="!dataList.length > 0"></empty-view>
+</ion-content>

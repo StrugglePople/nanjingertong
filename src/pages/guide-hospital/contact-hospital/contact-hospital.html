@@ -1,0 +1,33 @@
+<!--
+  Generated template for the ContactHospital page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>联系医院</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="navCtrl.popToRoot()">
+        <ion-icon name="ios-home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <module-separate></module-separate>
+  <ion-list title-color-1>
+    <ion-item [ngStyle]="{'height': '4.4rem'}">
+      <ion-grid no-padding>
+        <ion-row tappable (click)="call()">
+          <ion-col text-left>电话</ion-col>
+          <ion-col text-right>{{phone}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-content>

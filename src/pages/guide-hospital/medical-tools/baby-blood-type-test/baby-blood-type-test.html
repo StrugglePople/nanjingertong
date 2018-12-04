@@ -1,0 +1,56 @@
+<!--
+  Generated template for the BabyBloodTypeTest page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>宝宝血型</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="navCtrl.popToRoot()">
+        <ion-icon name="ios-home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  bg-color-1>
+  <p title-color-1 size-small-2 padding bg-color-light style="border-bottom: 1px solid #EDEDED">
+    血型一般分为A、B、AB和O四种，其中，AB型可接受任何血型的血液输入，因此被称为万能受血者，O型可以输出给任何血型的人体内，因此被称作万能输血者、异能血者。
+  </p>
+
+  <!--<div style="padding-left: 10px;" title-color-3 size-small-2>填写基本信息</div>-->
+  <div>
+    <div ion-item>
+      <div>父亲血型: {{param.dad}}</div>
+      <ion-row class="xuexing">
+        <ion-col *ngFor="let list of xuexign;index as i" tappable (click)="changeBlood('dad',list)"
+                 [ngClass]="{'radius-left':i == 0, 'radius-right':i==3,'select':param.dad == list}">
+          {{list}}
+        </ion-col>
+      </ion-row>
+    </div>
+    <div ion-item>
+      <div>母亲血型: {{param.mun}}</div>
+      <ion-row class="xuexing">
+        <ion-col *ngFor="let list of xuexign;index as i" tappable (click) = "changeBlood('mun',list)"
+                 [ngClass]="{'radius-left':i == 0, 'radius-right':i==3,'select':param.mun == list}">
+          {{list}}
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+
+  <div style="padding: 10px;line-height: 30px;" [hidden]="!param.result">
+    <div title-color-1 size-middle>宝宝的血型可能是：<span size-middle title-color-3>{{param.result ? param.result.p : ''}}</span></div>
+    <div title-color-1 size-middle>不可能出现血型是：<span size-middle style="color: #f66f71">{{param.result ? param.result.np : ''}}</span></div>
+  </div>
+
+  <p style="color: #e07046; font-size: 10px;line-height: 35px;">【注：本测试仅供参考，有关疾病相关诊断请咨询医生。】</p>
+
+  <button ion-button full round button-theme zk-button-full (click)="searchBlood()">{{!param.result ? '查看结果' : '重新测试'}}</button>
+</ion-content>

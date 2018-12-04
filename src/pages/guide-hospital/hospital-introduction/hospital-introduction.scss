@@ -1,0 +1,25 @@
+page-hospital-introduction {
+  .zk-tab-col {
+    text-align: center;
+    height: pxTorem(44px);
+    line-height: pxTorem(44px);
+    font-size: pxTorem(15px);
+  }
+  .zk-tab-col .flag {
+    height: pxTorem(3px);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .top-img{
+    display: block;
+    width: 100%;
+    height: auto;
+    //margin-bottom: 10px;
+    img{
+      display: block;
+      width: 100%;
+    }
+  }
+}

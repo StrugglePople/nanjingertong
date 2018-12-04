@@ -1,0 +1,31 @@
+<!--
+  Generated template for the MemberSelectModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>选择持卡人</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content bg-color-1>
+  <ion-list class="persons-list">
+    <ion-item class="member-item" detail-push *ngFor="let item of members" tappable (click)="chooseMember(item.id)">
+      <div [ngClass]="{'man': item.sex=='MALE', 'woman': item.sex=='FEMALE'}" class="icon">{{item.name.slice(-2)}}</div>
+      <div class="name" title-color-1>{{item.name}}<span> &nbsp;&nbsp;{{item.sex=='FEMALE'?'女':'男'}} &nbsp;&nbsp;{{item.cards.length > 0?'已绑定就诊卡'+item.cards.length +'个':'无就诊卡'}}</span></div>
+      <div class="mobile" title-color-1>{{item.mobileNo}}</div>
+      <div class="detail-title">{{item.paperNo}}</div>
+      <!--<div [ngClass]="{'moren': defaultId == item.id}"></div>-->
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+
+  <button ion-button zk-button-full round tappable size-middle style="margin-bottom: 5px;" class="add-member" (click)="showMemberInfo()"> <span size-big-3> + </span> &nbsp;就诊人</button>
+
+</ion-footer>

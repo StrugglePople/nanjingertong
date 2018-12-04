@@ -1,0 +1,54 @@
+page-RTCallNumView {
+  .call-title{
+    padding-left: 15px;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  .appoint-body{
+    margin: 10px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.10);
+    border-radius: 10px;
+    font-size: 16px;
+    width: auto;
+    overflow: hidden;
+    .item-block{
+      height: 30px;
+    }
+    .item-block .item-inner{
+      border:none;
+    }
+    ion-row{
+      margin: 0 15px;
+    }
+    .call-bg{
+      background: url("../assets/image/index/call-number.png") no-repeat;
+      background-size: 100% 100%;
+    }
+    .fist-row{
+      height: 40px;
+      line-height: 30px;
+      color: #fff;
+    }
+    .has-dash{
+      border-bottom: 1px dashed #D2D2D2;
+      height: 40px;
+    }
+    .detail-time{
+      line-height: 30px;
+      font-size: 17px;
+      color: #111111;
+      letter-spacing: 0;
+    }
+  }
+  .cannnum-footer{
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: center;
+    background: url("../assets/image/index/call-number.png") no-repeat;
+    background-size: 100% 100%;
+  }
+
+}

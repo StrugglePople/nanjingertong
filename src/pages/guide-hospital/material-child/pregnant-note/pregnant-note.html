@@ -1,0 +1,84 @@
+<!--
+  Generated template for the PregnantNotePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="backButtonClick()">
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>注意事项</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content bg-color-light>
+  <div class="remind-1" bg-color-light>
+    <div class="flag"></div>
+    <div class="title" size-small-1>孕期{{data.pregnantMonth}}月注意事项</div>
+  </div>
+  <div class="depart-introduce-text" title-color-1 size-small-2>{{data.noticeSummary}}</div>
+  <module-separate></module-separate>
+
+  <div class="remind-1" bg-color-light>
+    <div class="flag"></div>
+    <div class="title" size-small-1>胎儿指标</div>
+  </div>
+  <div class="depart-introduce-text" title-color-1 size-small-2>{{data.fetalIndex}}</div>
+  <module-separate></module-separate>
+
+  <div class="remind-1" bg-color-light>
+    <div class="flag"></div>
+    <div class="title" size-small-1>孕妇指标</div>
+  </div>
+  <div class="depart-introduce-text" title-color-1 size-small-2>{{data.pwIndex}}</div>
+  <module-separate></module-separate>
+
+  <div class="remind-1" bg-color-light>
+    <div class="flag"></div>
+    <div class="title" size-small-1>饮食指标</div>
+  </div>
+  <div class="depart-introduce-text" title-color-1 size-small-2>{{data.foodIndex}}</div>
+  <module-separate></module-separate>
+
+  <div class="remind-1" bg-color-light>
+    <div class="flag"></div>
+    <div class="title" size-small-1>护理要点</div>
+  </div>
+  <div class="depart-introduce-text" title-color-1 size-small-2>{{data.nursingPt}}</div>
+  <module-separate></module-separate>
+
+  <div class="remind-1" bg-color-light>
+    <div class="flag"></div>
+    <div class="title" size-small-1>疾病要点</div>
+  </div>
+  <div class="depart-introduce-text" title-color-1 size-small-2>{{data.diseasePt}}</div>
+  <module-separate></module-separate>
+
+  <div class="remind-1" bg-color-light>
+    <div class="flag"></div>
+    <div class="title" size-small-1>产检要点</div>
+  </div>
+  <div class="depart-introduce-text" title-color-1 size-small-2>{{data.antenatalExamPt}}</div>
+  <module-separate></module-separate>
+
+  <div class="remind-1" bg-color-light>
+    <div class="flag"></div>
+    <div class="title" size-small-1>心理要点</div>
+  </div>
+  <div class="depart-introduce-text" title-color-1 size-small-2>{{data.mentalPt}}</div>
+  <module-separate></module-separate>
+
+  <div class="remind-1" bg-color-light>
+    <div class="flag"></div>
+    <div class="title" size-small-1>胎教要点</div>
+  </div>
+  <div class="depart-introduce-text" title-color-1 size-small-2>{{data.antenatalTrainPt}}</div>
+  <module-separate></module-separate>
+</ion-content>

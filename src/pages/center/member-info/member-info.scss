@@ -1,0 +1,149 @@
+page-member-info {
+  .list-ios {
+    margin: 0;
+  }
+  .datetime-ios{
+    padding-left: 0;
+  }
+  .list-ios:not([inset]) + .list-ios:not([inset]) ion-list-header{
+    margin-top: 0;
+  }
+  .label-ios + ion-input .text-input, .label-ios + ion-textarea .text-input, .label-ios + .input + .cloned-input {
+    margin-left: 0;
+  }
+  .input-ios[clearInput] .text-input {
+    padding-right: 0;
+  }
+  .remind-content {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    margin-top: 20px;
+    .title{
+      height: 30px;
+      font-size: 13px;
+      color: #666666;
+      text-align: center;
+      line-height: 30px;
+    }
+    .content{
+      margin: 6px 12px;
+      //min-height: 72px;
+      font-size: 12px;
+      color: #999999;
+      line-height: 24px;
+    }
+    .content span{
+      color: red;
+    }
+  }
+  /**持卡人，卡页面上添加的样式***/
+  .button-2 {
+    height: pxTorem(44px);
+    position: relative;
+    background-color: #fff;
+    border-bottom: 1px solid #EEEEEE;
+    .item-inner{
+      background: none !important;
+      border-bottom: none !important;
+    }
+  }
+
+  .button-2.activated{
+    background-color: #ccc;
+  }
+  .button-2 .icon {
+    width: pxTorem(20px);
+    height: pxTorem(20px);
+    position: absolute;
+    left: pxTorem(15px);
+    top: 50%;
+    margin-top: pxTorem(-10px);
+  }
+
+  .button-2 .title {
+    position: absolute;
+    left: pxTorem(46px);
+    top: 0;
+    color: #11B3FF;
+    line-height: pxTorem(44px);
+  }
+
+  .button-2 .detail-title {
+    position: absolute;
+    right: pxTorem(39px);
+    top: 0;
+    line-height: pxTorem(44px);
+    font-size: pxTorem(15px);
+  }
+
+  .add-btn-icon {
+    background: url("../assets/image/center/center-add-btn.png");
+    background-size: pxTorem(20px) pxTorem(20px);
+  }
+  .over-flow{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: static;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+}
+.card-item {
+  height: pxTorem(74px);
+  position: relative;
+}
+.card-item .icon {
+  width: 90px;
+  height: pxTorem(43px);
+  position: absolute;
+  left: pxTorem(15px);
+  top: 50%;
+  margin-top: pxTorem(-22px);
+  border-radius: pxTorem(8px);
+  padding: pxTorem(2px);
+}
+.card-item .default{
+  border: pxTorem(1px) solid #73d2ff;
+}
+.card-item .default >div {
+  background-color: #73d2ff;
+}
+.card-item .icon.idCard {
+  border: pxTorem(1px) solid #73d2ff;
+}
+.card-item .icon.idCard >div {
+  background-color: #73d2ff;
+}
+.card-item .icon.shebao {
+  border: pxTorem(1px) solid #37f7b6;
+}
+.card-item .icon.shebao >div {
+  background-color: #37f7b6;
+}
+.card-item .icon.zifei {
+  border: pxTorem(1px) solid #a1adff;
+}
+.card-item .icon.zifei >div {
+  background-color: #a1adff;
+}
+.card-item .default >div, .card-item .icon.shebao >div, .card-item .icon.zifei >div, .card-item .icon.idCard >div {
+  border-radius: pxTorem(8px);
+  line-height: pxTorem(37px);
+}
+.card-item .name {
+  position: absolute;
+  left: 120px;
+  top: pxTorem(16px);
+  height: pxTorem(16px);
+}
+.card-item .card-no {
+  position: absolute;
+  left: 120px;
+  bottom: pxTorem(17px);
+  font-size: pxTorem(15px);
+  height: pxTorem(15px);
+  color: #7f7f7f;
+}

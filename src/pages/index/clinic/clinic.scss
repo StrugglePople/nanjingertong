@@ -1,0 +1,180 @@
+.nav-dept-bar {
+  border-bottom: none;
+  background:url(../assets/image/record/appoint-record-bg.png) no-repeat;
+  //background-size:100% pxTorem(80px);
+  //background-color: $primary-color;
+  height: pxTorem(80px);
+  width: 100%;
+}
+.nav-dept-bar .icon-wrapper{
+  position: absolute;
+  width: pxTorem(50px);
+  height: pxTorem(50px);
+  top: pxTorem(15px);
+  left: pxTorem(15px);
+  border-radius: pxTorem(50px);
+  overflow: hidden;
+  display: flex;
+}
+.nav-dept-bar .icon-wrapper .icon {
+  position: relative;
+  height: pxTorem(50px);
+  width: pxTorem(50px);
+  margin: auto;
+  background-size: pxTorem(50px) pxTorem(50px) !important;
+}
+.nav-dept-bar .icon-wrapper .icon.common {
+  background: url("../assets/image/index/dept-icon.png") no-repeat center;
+}
+.nav-dept-bar .title{
+  position: absolute;
+  bottom: pxTorem(32px);
+  left: pxTorem(80px);
+}
+.schedule-wrapper {
+  position: relative;
+  height: pxTorem(200px);
+}
+.schedule-wrapper .time-flag-col {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: pxTorem(25px);
+  height: pxTorem(200px);
+}
+.schedule-wrapper .time-flag-col div{
+  height: pxTorem(50px);
+  width: 100%;
+  border-right: pxTorem(1px) solid #f1f1f1;
+  border-bottom: pxTorem(1px) solid #f1f1f1;
+  line-height: pxTorem(25px);
+}
+.schedule-wrapper .schedule-flag-col {
+  position: absolute;
+  left: pxTorem(25px);
+  top: 0;
+  right: 0;
+  height: pxTorem(200px);
+}
+.schedule-wrapper .schedule-flag-col .row {
+  height: pxTorem(50px);
+  border-bottom: pxTorem(1px) solid #f1f1f1;
+}
+.schedule-flag-col .col{
+  height: pxTorem(50px);
+  border-right: pxTorem(1px) solid #f1f1f1;
+  padding: 0;
+  /*border-bottom: 1px solid #f1f1f1;*/
+}
+.schedule-flag-col .row .col .clinic-button {
+  width: 100%;
+  height: 100%;
+  background-color: #73d2ff;
+  line-height: pxTorem(20px);
+  padding: pxTorem(5px) 0;
+}
+.schedule-flag-col .row .col .clinic-button.disabled {
+  background-color: #ccc;
+}
+
+.icon-content-wrapper {}
+.icon-content-wrapper .icon-header {
+  height: pxTorem(45px);
+  line-height: pxTorem(45px);
+  position: relative;
+}
+.icon-content-wrapper .icon{
+  position: absolute;
+  width: pxTorem(15px);
+  height: pxTorem(15px);
+  left: pxTorem(15px);
+  top: 50%;
+  margin-top: pxTorem(-7px);
+  background-size: pxTorem(15px) !important;
+}
+.icon-content-wrapper .icon.position {
+  background: url("../assets/image/index/position.png");
+}
+.icon-content-wrapper .icon.specialize {
+  background: url("../assets/image/index/specialize.png");
+}
+.icon-content-wrapper .icon.abstract {
+  background: url("../assets/image/index/abstract.png");
+}
+.icon-content-wrapper .icon-header .title {
+  padding-left: pxTorem(38px);
+}
+.icon-content-wrapper .icon-header  .right-btn {
+  position: absolute;
+  right: pxTorem(15px);
+  top: 0
+}
+.icon-content-wrapper .content {
+  padding: 0 pxTorem(15px) pxTorem(15px) pxTorem(15px);
+}
+
+
+.nav-expert-bar {
+  border-bottom: none;
+  background:url(../assets/image/record/appoint-record-bg.png) no-repeat;
+  background-size:100% 100%;
+  //background-color: $primary-color;
+  height: pxTorem(120px);
+  width: 100%;
+  position: relative;
+}
+.nav-expert-bar .icon {
+  position: absolute;
+  width: pxTorem(70px);
+  height: pxTorem(70px);
+  top: 0;
+  left: 50%;
+  margin-left: pxTorem(-35px);
+  border-radius: pxTorem(70px);
+  overflow: hidden;
+}
+.nav-expert-bar .icon img {
+  width: 100%;
+  height: 100%;
+}
+.nav-expert-bar .title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: pxTorem(84px);
+}
+.nav-expert-bar .row {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: pxTorem(52px);
+}
+.nav-expert-bar .attent, .nav-expert-bar .no-attent {
+  background-size: pxTorem(17px) pxTorem(16px) !important;
+  background-position: pxTorem(10px) pxTorem(3px) !important;
+  width: pxTorem(76px);
+  height: pxTorem(22px);
+  top: pxTorem(23px);
+  position: absolute;
+  right: 0px;
+  background-color: #fff !important;
+  border-top-left-radius: pxTorem(22px);
+  border-bottom-left-radius: pxTorem(22px);
+  padding-left: pxTorem(30px);
+  line-height: pxTorem(22px);
+}
+.nav-expert-bar .attent {
+  background: url("../assets/image/index/attent.png") no-repeat;
+}
+.nav-expert-bar .no-attent {
+  background: url("../assets/image/index/no-attent.png") no-repeat;
+}
+.dept-list .item-selected{
+  position: absolute;
+  height: pxTorem(34px);
+  width: pxTorem(4px);
+  left: 0;
+  top: 50%;
+  margin-top: pxTorem(-17px);
+}

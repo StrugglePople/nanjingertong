@@ -1,0 +1,44 @@
+<!--
+  Generated template for the MemberList page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>持卡人管理</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="navCtrl.popToRoot()">
+        <ion-icon name="ios-home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content bg-color-1>
+
+  <div class="button-2" bottom-line tappable (click)="showMemberInfo()">
+    <div class="icon add-btn-icon"></div>
+    <div class="title">添加就诊人</div>
+    <div class="detail-title title-color-2">
+      <!--还可以绑定3人-->
+    </div>
+    <div class="icon-arrow"></div>
+  </div>
+
+  <module-separate></module-separate>
+
+  <ion-list>
+    <ion-item class="member-item" *ngFor="let item of items" tappable (click)="clickItem(item)" detail-push>
+      <div [ngClass]="{'man': item.sex=='MALE', 'woman': item.sex=='FEMALE'}" class="icon">{{item.name.slice(-2)}}</div>
+      <div class="name" title-color-1>{{item.name}}<span> &nbsp;&nbsp;{{item.sex=='FEMALE'?'女':'男'}} &nbsp;&nbsp;{{item.cards.length > 0?'已绑定就诊卡'+item.cards.length +'个':'无就诊卡'}}</span></div>
+      <div class="mobile" title-color-1>{{item.mobileNo}}</div>
+      <div class="detail-title">{{item.paperNo}}</div>
+      <!--<div [ngClass]="{'moren': defaultId == item.id}"></div>-->
+    </ion-item>
+  </ion-list>
+
+</ion-content>

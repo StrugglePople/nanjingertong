@@ -1,0 +1,37 @@
+<!--
+  Generated template for the More page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>停车服务</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item tappable (click)="pushView('ParkingState')" detail-push >
+      车位情况
+    </ion-item>
+    <ion-item tappable detail-push (click)="pushView('HtmlInfoPage', {type: 'PARKING_PAYMENT'})">
+      停车须知
+    </ion-item>
+    <ion-item tappable detail-push (click)="openMap('hexiPark')">
+      停车导航
+    </ion-item>
+    <ion-item tappable detail-push (click)="pushView('LicenseManagement')">
+      缴停车费
+    </ion-item>
+    <ion-item tappable detail-push (click)="pushView('ParkingPayRecord')">
+      缴费记录
+    </ion-item>
+    <ion-item tappable detail-push (click)="showParkDistribution()">
+      停车场分布图
+    </ion-item>
+  </ion-list>
+</ion-content>

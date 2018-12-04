@@ -1,0 +1,57 @@
+<!--
+  Generated template for the AppointmentRecord page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{chargeType == 'MEDICAL_CARD_CHARGE'? "就诊卡":"住院"}}充值记录</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content bg-color-1>
+  <div class="clinic-info-top" bg-color-light bottom-line tappable (click)="pushCardListView()">
+    <div class="remind" size-big-1 title-color-1 *ngIf="card.medicalCardNo">{{card.name}} {{card.medicalCardNo}}</div>
+    <!--<div class="detail-title" size-small-1 title-color-2 *ngIf="card.medicalCardNo" [ngSwitch]="card.medicalCardType">
+      <span *ngSwitchCase="'其他'">院内卡</span>
+      <span *ngSwitchDefault>{{card.medicalCardType}}</span>
+      : {{card.medicalCardNo}}</div>-->
+    <div class="remind" size-big-1 title-color-2 *ngIf="!card.medicalCardNo">请选择{{chargeType == 'MEDICAL_CARD_CHARGE'? "就诊卡":"住院号"}}</div>
+    <i class="icon-arrow"></i>
+  </div>
+  <module-separate></module-separate>
+  <ion-refresher (ionRefresh)="getServiceData($event)" *ngIf="card && card.id > 0">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list class="record-list" *ngIf="dataList.length > 0">
+    <div *ngFor="let item of dataList">
+      <!--{{dataList[0][0].items.length}}dd-->
+      <!--<ion-item-divider color="light">
+        <div class="record-divider">{{item.items[0].chargeTime.slice(0,7)}}</div>
+      </ion-item-divider>-->
+      <ion-item class="record-cell" *ngFor="let item1 of item.items" no-padding
+                (click)="showDetailView('RechargeRecordDetailPage', item1)">
+        <ion-grid text-left>
+          <ion-row>
+            <ion-col size-middle>{{item1.medicalCardNo}}</ion-col>
+            <ion-col size-small-1 title-color-4 text-right>{{item1.chargeTime}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size-middle title-color-4>查看详情 (￥ {{item1.fee}} {{rechargeStatus[item1.status]}})</ion-col>
+            <i class="icon-arrow"></i>
+          </ion-row>
+          <!--<ion-row>
+            <ion-col title-color-1 size-middle>充值金额</ion-col>
+            <ion-col title-color-1 size-middle>{{item1.fee}}</ion-col>
+          </ion-row>-->
+        </ion-grid>
+        <!--<i class="nav" *ngIf="item1.addressId"></i>-->
+        <!--<i class="icon-arrow"></i>-->
+      </ion-item>
+    </div>
+  </ion-list>
+  <empty-view *ngIf="!dataList.length > 0"></empty-view>
+</ion-content>
