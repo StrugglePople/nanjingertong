@@ -18,8 +18,7 @@
     <ion-item class="fist-item" text-center size-big-3 title-color-black>
       {{messageDetail.titleStr}}
     </ion-item>
-    <div class="detail-content" title-color-4>
-      {{messageDetail.content | safeHtml}}
+    <div class="detail-content" title-color-4 [innerHtml]="messageDetail.content | safeHtml">
     </div>
     <div text-right class="detail-content time">{{messageDetail.messageTime}}</div>
 

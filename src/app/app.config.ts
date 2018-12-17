@@ -18,7 +18,7 @@ export class AppConfig {
 
   session: any = ''; //账户信息
 
-  version:string = '3.1.0'; //版本号
+  version:string = '3.1.3'; //版本号
   zyCardTypeId:any = ''; //住院号id
 
   windowListener = {

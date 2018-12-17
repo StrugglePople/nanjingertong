@@ -32,7 +32,7 @@ export class SettingService {
         this.app.version = version;
         this.dataInitWithLaunch();
         callback()
-      })
+      });
       if(this.platform.is("ios")){
         ZkPlugin.initBaiduPush(this.app.mode,()=>{
 
